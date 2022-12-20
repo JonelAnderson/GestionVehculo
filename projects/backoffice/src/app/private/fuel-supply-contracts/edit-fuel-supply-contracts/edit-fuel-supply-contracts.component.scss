@@ -1,0 +1,113 @@
+@import 'variables';
+
+.seccion-container {
+    margin: 10px;
+}
+
+.mat-dialog-content {
+    margin: 0;
+    word-wrap: break-word;
+    max-height: 360px;
+}
+
+
+.titleNameModal {
+    justify-content: center;
+}
+
+.register-background {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.general-input {
+    width: 100%;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 10px;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 936px;
+}
+
+::ng-deep .cdk-overlay-pane {
+    margin-left: 14%;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.icons {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: -5px;
+}
+
+.input-with-button {
+    display: flex;
+    align-items: center;
+}
+
+.round-button {
+    height: 38px;
+    width: 37px;
+    margin-left: 5%;
+    margin-top: -5%;
+    background-color: $tspSigesSuccess;
+}
+
+.icons-with-input {
+    font-size: 20px;
+    font-weight: 900;
+    margin-left: 1px;
+    margin-top: -14px;
+}
+
+.tsp-secction-title {
+    color: $tspSigesBlue;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.date-label {
+    color: rgba(0, 0, 0, .6);
+}
+
+::ng-deep .p-calendar .p-inputtext {
+    border: none !important;
+    border-bottom: 1px solid rgba(0, 0, 0, .6) !important;
+}
+
+.inputButton {
+    width: 100px;
+    margin-top: 5px;
+}
+
+.bottonEdit {
+    width: 10px;
+
+}
+
+.inputseccion {
+    margin-top: 50px;
+}

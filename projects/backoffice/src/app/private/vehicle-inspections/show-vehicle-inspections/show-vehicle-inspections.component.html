@@ -1,0 +1,191 @@
+<div class="container">
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 row leftSectionTitleModal">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-5 col-xl-5 titleNameModal">
+                <div>
+                    <span class="tsp-title-modals">{{'VEHICLE_INSPECTIONS.TITLE' | translate}}</span>&nbsp;
+                </div>
+                <div>
+                    <span>XVE-76</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="state">
+                    <span>CADUCADO</span>&nbsp;
+                </div>
+            </div>
+
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowVehicleInspections -->
+    <div mat-dialog-content>
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="title">
+                        <span>{{ 'VEHICLE_INSPECTIONS.DATA.INSURED_VEHICLE' | translate }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.LICENSE_PLATE' | translate }}:
+                    </div>
+                    <div> {{item?.LicensePlate}} </div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.AREA' | translate }}:
+                    </div>
+                    <div>{{item?.Area}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.RESPONSIBLE' | translate }}:
+                    </div>
+                    <div>{{item?.Responsible}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.TYPE' | translate }}:
+                    </div>
+                    <div>{{item?.Type}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.MARK' | translate }} :
+                    </div>
+                    <div>{{item?.Mark}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.MODEL' | translate }} :
+                    </div>
+                    <div>{{item?.Model}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.COLOR' | translate }} :
+                    </div>
+                    <div>{{item?.Color}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.YEAR' | translate }}:
+                    </div>
+                    <div>{{item?.Year}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.N_ENGINE' | translate }}:
+                    </div>
+                    <div>{{item?.NEngine}}</div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.SERIE' | translate }}:
+                    </div>
+                    <div>{{item?.Serie}}</div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="title">
+                        <span>{{ 'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_DETAILS' | translate
+                            }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_NUMBER' | translate
+                        }}:
+                    </div>
+                    <div>{{item?.CertificateNumber}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.ENTERPRISE' | translate }}:
+                    </div>
+                    <div>{{item?.Enterprise}}</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.REVIEW_DATE' | translate
+                        }} :
+                    </div>
+                    <div>{{item?.ReviewDate}}</div>
+                </div>
+                <div class="col contentAtribute">
+                    <div class="title">
+                        {{ 'VEHICLE_INSPECTIONS.DATA.EXPIRATION_DATE' | translate }}:
+                    </div>
+                    <div>{{item?.ExpirationDate}}</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row seccion-container">
+            <hr class="ks-line" />
+            <div class="FileUploaded">
+                <div class="title">
+                    <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' | translate}}</span>
+                </div>
+                <div class="container attachmentsFile">
+                    <div class="contentAttachment">
+                        <div class="contentAttachmentFile">
+                            <div class="iconFile">
+                                <mat-icon>picture_as_pdf</mat-icon>
+                            </div>
+                            <div>
+                                <div class="nameFile">{{item?.Document}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

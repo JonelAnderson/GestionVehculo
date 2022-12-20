@@ -1,0 +1,172 @@
+<!-- AAAAAAAAAAAAAAAAAA -->
+<div class="container">
+    <form [formGroup]="historyVehicleInspectionForm">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <div>
+                    <mat-label
+                        class="tsp-title tsp-view-title tsp-title-modals">{{'VEHICLE_INSPECTIONS.TITLES.SHOW_HISTORY' |
+                        translate}}</mat-label>
+                </div>
+            </div>
+        </div>
+
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <div class="Section">
+                <hr class="ks-line" />
+                <div class="DataVehicle">
+                    <div class="title">
+                        <span>{{'VEHICLE_INSPECTIONS.DATA.INSURED_VEHICLE'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- PLATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="searchPlate">
+                                    <mat-label class="title">{{'VEHICLE_INSPECTIONS.DATA.LICENSE_PLATE'|
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput type="text" formControlName="licencePlate" maxlength="6">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf=" historyVehicleInspectionForm.controls.licencePlate.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <button mat-flat-button color="primary" class="btnSearch">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- AREA -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.AREA'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- RESPONSIBLE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.RESPONSIBLE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- TYPE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.TYPE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- BRAND -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.BRAND'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- MODEL -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.MODEL'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- COLOR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.COLOR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- YEAR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.YEAR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- N° ENGINE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.N_ENGINE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- N° SERIE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.DATA.SERIE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+            <!-- Section Contractor -->
+            <div class="Section">
+                <div class="ContractorData">
+                    <div class="title">
+                        <mat-label>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.TITLE'| translate}}</mat-label>
+                    </div>
+                    <div class="container row table">
+                        <p-table [value]="arrayHistoryVehicleInspections">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.N_CERTIFIED'| translate}}</th>
+                                    <th>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.SUPPLIER'| translate}}</th>
+                                    <th>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.REVIEW_DATE'| translate}}</th>
+                                    <th>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.EXPIRATION_DATE'| translate}}</th>
+                                    <th>{{'VEHICLE_INSPECTIONS.SHOW_HISTORY.STATE'| translate}}</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-vehicleInspection let-rowIndex="rowIndex">
+                                <tr>
+                                    <td>{{vehicleInspection.nCertified}}</td>
+                                    <td>{{vehicleInspection.supplier}}</td>
+                                    <td>{{vehicleInspection.reviewDate}}</td>
+                                    <td>{{vehicleInspection.expirationDate}}</td>
+                                    <td
+                                        [ngClass]="{'statusRed': vehicleInspection.state==false,'statusSuccess' : vehicleInspection.state==true}">
+                                        <span *ngIf="vehicleInspection.state==false">CADUCADO</span>
+                                        <span *ngIf="vehicleInspection.state==true">VALIDO</span>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

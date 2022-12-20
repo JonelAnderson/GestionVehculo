@@ -1,0 +1,236 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label class="tsp-title tsp-view-title tsp-title-modals">{{ 'VEHICLE_INSPECTIONS.TITLES.REGISTER' |
+                    translate
+                    }}</mat-label>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'VEHICLE_INSPECTIONS.DATA.INSURED_VEHICLE'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="search-input">
+                            <mat-label class="title">{{'VEHICLE_INSPECTIONS.DATA.LICENSE_PLATE'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="licencePlate" maxlength="6" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf=" form.controls.licencePlate.errors?.required">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                        <button class="button-actions" (click)="searchVehicle()">
+                            <mat-icon class="tsp-icons">search</mat-icon>
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.AREA' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.RESPONSIBLE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.TYPE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.MARK' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.MODEL' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.COLOR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.YEAR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.N_ENGINE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'VEHICLE_INSPECTIONS.DATA.SERIE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_DETAILS'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_NUMBER'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="certificateNumber" maxlength="20" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf=" form.controls.certificateNumber.errors?.required">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'VEHICLE_INSPECTIONS.DATA.ENTERPRISE'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="enterprise" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf=" form.controls.enterprise.errors?.required">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'VEHICLE_INSPECTIONS.DATA.REVIEW_DATE' | translate }} </mat-label>
+                            <input matInput [matDatepicker]="reviewDate" required formControlName="reviewDate" />
+                            <mat-datepicker-toggle matSuffix [for]="reviewDate"> </mat-datepicker-toggle>
+                            <mat-datepicker #reviewDate></mat-datepicker>
+
+                            <!-- Required Date Messages -->
+                            <mat-error *ngIf="form.controls.reviewDate.errors?.required">{{
+                                'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'VEHICLE_INSPECTIONS.DATA.EXPIRATION_DATE' | translate }} </mat-label>
+                            <input matInput [matDatepicker]="expirationDate" required
+                                formControlName="expirationDate" />
+                            <mat-datepicker-toggle matSuffix [for]="expirationDate"> </mat-datepicker-toggle>
+                            <mat-datepicker #expirationDate></mat-datepicker>
+                            <!-- Required Date Messages -->
+                            <mat-error *ngIf="form.controls.expirationDate.errors?.required">{{
+                                'PIP.DATA.ERRORS.DATE_OF_ISSUE_REQUIRED' | translate
+                                }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'VEHICLE_INSPECTIONS.DATA.ATTACHED_DOCUMENT'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input" style="width: 80%;">
+                            <mat-label> {{ 'VEHICLE_INSPECTIONS.DATA.ADD_DOCUMENT' | translate }}
+                            </mat-label>
+                            <input matInput id="uploadFile" value={{file.name}} disabled />
+                        </mat-form-field>
+                        <div class="fileUpload btn ">
+                            <mat-icon>note_add</mat-icon>
+                            <input id="uploadBtn" type="file" class="upload" (change)="onFileSelect($event)" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+                <button type="submit" [disabled]="form.invalid" mat-flat-button mat-button color="primary">
+                    <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+                </button>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

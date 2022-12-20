@@ -1,0 +1,346 @@
+<div class="container">
+    <form action="">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <h1 class="tsp-title tsp-title-modals">{{'FUEL_SUPPLIES.SUPPLY.TITLE' | translate}}</h1>
+            </div>
+        </div>
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{'FUEL_SUPPLIES.SUPPLY.VEHICLE_DATA' | translate}}:
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.LICENSE_PLATE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            AUA-056
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.AREA' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            OGA
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.RESPONSIBLE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            CARRILLO TOLEDO FERNANDO
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.TYPE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            CAMIONETA
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.BRAND' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            TOYOTA
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.MODEL' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            TICO SL
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.COLOR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            ROJO
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.YEAR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            2022
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.ENGINE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            284930356-SOL
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.SERIE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            284930356-SOLa21
+                        </span>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.FUEL_TYPE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            GASOLINA 97
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{'FUEL_SUPPLIES.SUPPLY.DISPATCH_DATA' | translate}}:
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--Nota de despacho-->
+                        <div>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label>{{ 'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DISPATCH_NOTE' | translate }}
+                                </mat-label>
+                                <input matInput type="number"
+                                    placeholder="{{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DISPATCH_NOTE' | translate }}"
+                                    formControlName="dispachNote" maxlength=""
+                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.dispatchNote.errors?.required && editsourcingForm.controls.dispatchNote.touched">
+                                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.dispatchNote.errors?.pattern && editsourcingForm.controls.dispatchNote.touched">
+                                    {{ 'VEHICLES.ERRORS.MIN_SIX_CARACTERS' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--Fecha de despacho-->
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DISPATCH_DATE' | translate}}
+                            </mat-label>
+                            <input matInput startView="multi-year" formControlName="dispatchDate"
+                                [matDatepicker]="dispatchDate">
+                            <mat-datepicker #dispatchDate startView="multi-year">
+                            </mat-datepicker>
+                            <mat-datepicker-toggle matSuffix [for]="dispatchDate">
+                            </mat-datepicker-toggle>
+                            <mat-error
+                                *ngIf="editsourcingForm.controls.dispatchDate.errors?.required && editsourcingForm.controls.dispatchDate.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                            </mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--Vendedor-->
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{ 'FUEL_SUPPLIES.SUPPLY.SUPPLYS.SELLER' | translate }}
+                            </mat-label>
+                            <input matInput type="text"
+                                placeholder="{{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.SELLER' | translate }}"
+                                formControlName="seller" maxlength=""
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="editsourcingForm.controls.seller.errors?.required && editsourcingForm.controls.seller.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            <mat-error
+                                *ngIf="editsourcingForm.controls.seller.errors?.pattern && editsourcingForm.controls.seller.touched">
+                                {{ 'VEHICLES.ERRORS.MIN_SIX_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--CONDUCTOR-->
+                        <div>
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label> {{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DRIVER'|
+                                    translate}} </mat-label>
+                                <mat-select formControlName="driver">
+                                    <mat-option *ngFor="let insurance of sourcingForm" [value]="insurance.value">
+                                        {{ insurance.value }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.driver.errors?.required && editsourcingForm.controls.driver.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--HORA DE DESPACHO-->
+                        <div>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label>{{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DISPATCH_TIME' | translate}}
+                                </mat-label>
+                                <input matInput type="time"
+                                    placeholder="{{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.DISPATCH_TIME' | translate}}"
+                                    formControlName="dispatchTime" required />
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.dispatchTime.errors?.required && editsourcingForm.controls.dispatchTime.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--ODOMETRO-->
+                        <div>
+                            <mat-form-field appearance="fill" class="general-input">
+                                <mat-label>{{ 'FUEL_SUPPLIES.SUPPLY.SUPPLYS.ODOMETER' | translate }}
+                                </mat-label>
+                                <input matInput type="text"
+                                    placeholder="{{ 'FUEL_SUPPLIES.SUPPLY.SUPPLYS.ODOMETER' | translate }}"
+                                    formControlName="odometer" maxlength=""
+                                    oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.dispatchNote.errors?.required && editsourcingForm.controls.dispatchNote.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.odometer.errors?.pattern && editsourcingForm.controls.odometer.touched">
+                                    {{ 'VEHICLES.ERRORS.MIN_SIX_CARACTERS' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <!--AREA-->
+                        <div>
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label> {{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.AREA'|
+                                    translate}} </mat-label>
+                                <mat-select formControlName="area">
+                                    <mat-option *ngFor="let insurance of sourcingForm" [value]="insurance.value">
+                                        {{ insurance.value }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.area.errors?.required && editsourcingForm.controls.area.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-8 col-lg-8 col-xl-8">
+                        <!--CONTRACTO-->
+                        <div>
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label> {{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.CONTRACT'| translate}} </mat-label>
+                                <mat-select formControlName="contract">
+                                    <mat-option *ngFor="let insurance of sourcingForm" [value]="insurance.value">
+                                        {{ insurance.value }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.contract.errors?.required && editsourcingForm.controls.contract.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{'FUEL_SUPPLIES.SUPPLY.CATERING' | translate}}:
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div>
+                            <mat-form-field class="general-input" appearance="fill">
+                                <mat-label> {{'FUEL_SUPPLIES.SUPPLY.SUPPLYS.CONCEPT'| translate}} </mat-label>
+                                <mat-select formControlName="contract">
+                                    <mat-option *ngFor="let insurance of sourcingForm" [value]="insurance.value">
+                                        {{ insurance.value }}
+                                    </mat-option>
+                                </mat-select>
+                                <mat-error
+                                    *ngIf="editsourcingForm.controls.concept.errors?.required && editsourcingForm.controls.concept.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <p-table [value]="" class="table">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>{{'FUEL_SUPPLIES.DATA.ITEM'| translate}}</th>
+                                    <th>{{'FUEL_SUPPLIES.DATA.CONCEPT'| translate}}</th>
+                                    <th>{{'FUEL_SUPPLIES.DATA.QUANTITY'| translate}}</th>
+                                    <th>{{'FUEL_SUPPLIES.DATA.PU'| translate}}</th>
+                                    <th>{{'FUEL_SUPPLIES.DATA.AMOUNT'| translate}}</th>
+                                    <th>{{'FUEL_SUPPLIES.DATA.OPTIONS'| translate}}</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="">
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary" class="button-save" (click)="commitEdit()">
+                    <mat-icon class="icons">save</mat-icon>{{ 'FUEL_SUPPLIES.SUPPLY.BUTTONS_SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'FUEL_SUPPLIES.SUPPLY.BUTTONS_CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

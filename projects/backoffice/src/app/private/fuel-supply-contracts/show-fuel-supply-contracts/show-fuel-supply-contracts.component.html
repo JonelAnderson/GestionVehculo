@@ -1,0 +1,206 @@
+<div class="container">
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-10 col-xl-10 row leftSectionTitleModal">
+            <div class="col-12 col-sm-6 col-md-7 col-lg-7 col-xl-6 titleNameModal row">
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                    <span class="tsp-title-modals">{{'FUEL_SUPPLY_CONTRACT.SHOW.TITLE' | translate}}</span>&nbsp;
+                </div>
+                <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                    <span>| 032-2021-MIMP/OGA</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-5 col-lg-5 col-xl-5 contentState">
+                <div class="state"
+                    [ngClass]="{'statusRed' : deferenceDates<=ColorRedState,'statusYelow' : ColorRedState<deferenceDates && deferenceDates<ColorYelowState,'statusSuccess' : deferenceDates>ColorSuccessState}">
+                    <span
+                        *ngIf="ColorRedState<deferenceDates && deferenceDates<ColorYelowState || deferenceDates>ColorSuccessState">{{'FUEL_SUPPLY_CONTRACT.DATA.STATUS.VALID'
+                        | translate}}</span>
+                    <span *ngIf="deferenceDates<=ColorRedState">{{'FUEL_SUPPLY_CONTRACT.DATA.STATUS.TIMED_OUT' |
+                        translate}}</span>
+                </div>
+                <div class="BalanceState">
+                    <div class="balanceState"
+                        [ngClass]="{'statusRed' : valueTotalContract==0,'statusYelow' : 0<valueTotalContract && valueTotalContract<percentageOfTotalAmount,'statusSuccess' : valueTotalContract>percentageOfTotalAmount}">
+                        <mat-icon>paid</mat-icon>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- DERECHA -->
+        <div class="col-3 col-sm-2 col-md-4 col-lg-2 col-xl-2 optionsModal">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'PIP.SHOW_PIP.BTN.UNSUSCRIBE'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowFuelSuppliesContract -->
+    <div mat-dialog-content class="container">
+        <!-- Section General Data -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="GeneralData">
+                <div class="title">
+                    <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.GENERAL_DATE' | translate}}</mat-label>
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.NUMBER_CONTRACT' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>CARRILLO TOLEDO LUIS FERNANDO</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.AMOUNT_TOTAL' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>6311.985</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.START_DATE' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>24/12/1998</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.END_DATE' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>28/01/2025</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.CONCEPT' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>GASOHOL 95 | ACEITE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Contractor -->
+        <div class="Section">
+            <div class="ContractorData">
+                <div class="title">
+                    <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.CONTRACTOR_DETAILS' | translate}}</mat-label>
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.BUSINESS_NAME' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>MULTISERVICIOS TROME SAC</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.RUC' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>20701875490</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.ADDRESS' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>AV. VILLON 456</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.MAIL' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>CARRILLO@GMAIL.COM</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="title col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
+                            <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.PHONE' | translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 subtitle">
+                            <span>942047719</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Contractor -->
+        <div class="Section">
+            <div class="ContractorData">
+                <div class="title">
+                    <mat-label>{{'FUEL_SUPPLY_CONTRACT.DATA.CONTRACT_PROGRESS'| translate}}</mat-label>
+                </div>
+                <div class="container row table">
+                    <p-table [value]="fuelSupliesContract">
+                        <ng-template pTemplate="header">
+                            <tr>
+                                <th>{{'FUEL_SUPPLY_CONTRACT.DATA.CONCEPT'| translate}}</th>
+                                <th>{{'FUEL_SUPPLY_CONTRACT.DATA.AREA'| translate}}</th>
+                                <th>{{'FUEL_SUPPLY_CONTRACT.DATA.CONTRACTED_QUANTITY'| translate}}</th>
+                                <th>{{'FUEL_SUPPLY_CONTRACT.DATA.CONSUMED_QUANTITY'| translate}}</th>
+                                <th>{{'FUEL_SUPPLY_CONTRACT.DATA.QUANTITY_AVAILABLE'| translate}}</th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-FuelSuplies let-rowIndex="rowIndex">
+                            <tr>
+                                <td>{{FuelSuplies.concepto}}</td>
+                                <td>{{FuelSuplies.area}}</td>
+                                <td>{{FuelSuplies.cantidadContratada}}</td>
+                                <td>{{FuelSuplies.cantidadConsumida}}</td>
+                                <td
+                                    [ngClass]="{'statusRed': 0==FuelSuplies.cantidadDisponible,'statusYelow': 0<FuelSuplies.cantidadDisponible && FuelSuplies.cantidadDisponible<(FuelSuplies.cantidadContratada)*quantityAvailable,'statusSuccess' : (FuelSuplies.cantidadContratada)*quantityAvailable<FuelSuplies.cantidadDisponible}">
+                                    {{FuelSuplies.cantidadDisponible}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

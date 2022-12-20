@@ -1,0 +1,80 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'MOBILITY_REQUEST.TITLE' | translate }}</h1>
+    </div>
+    <div class="">
+        <div class="radioButton">
+            <mat-radio-group [(ngModel)]="valueRadioBtn">
+                <mat-radio-button class="example-margin" value="valorization">{{ 'FUEL_SUPPLIES.DATA.VALORIZATION' |
+                    translate
+                    }}</mat-radio-button>
+                <mat-radio-button class="example-margin" value="control">{{ 'FUEL_SUPPLIES.DATA.CONTROL_FIRM' |
+                    translate
+                    }}</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <section>
+            <div class="titleSection">
+                <mat-label>{{ 'FUEL_SUPPLIES.DATA.CRITERY_FILTER' | translate }}</mat-label>
+            </div>
+            <div class="contentSection row">
+                <div class="date col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 row">
+                    <div class="dateContent row">
+                        <div class="dateInitial col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field appearance="fill" class="generalMatForm">
+                                <mat-label>{{ 'FUEL_SUPPLIES.DATA.DATE_TIME_INITIAL' | translate }}</mat-label>
+                                <input matInput [matDatepicker]="picker1">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                        <div class="dateEnd col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                            <mat-form-field appearance="fill" class="generalMatForm">
+                                <mat-label>{{ 'FUEL_SUPPLIES.DATA.DATE_TIME_END' | translate}}</mat-label>
+                                <input matInput [matDatepicker]="picker">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+                <div class="contract col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4">
+                    <div *ngIf="valueRadioBtn=='valorization'">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>{{ 'FUEL_SUPPLIES.DATA.CONTRACT' | translate | uppercase}}</mat-label>
+                            <mat-select [(ngModel)]="selectedValue" name="food">
+                                <mat-option *ngFor="let food of foods" [value]="food.value">
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div *ngIf="valueRadioBtn=='control'">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>AREA</mat-label>
+                            <mat-select [(ngModel)]="selectedValue" name="food">
+                                <mat-option *ngFor="let food of foods" [value]="food.value">
+                                    {{food.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="">
+            <div class="titleSection">
+                <mat-label *ngIf="valueRadioBtn=='valorization'">{{ 'FUEL_SUPPLIES.DATA.TYPE_VALORIZATION' | translate
+                    }} A:</mat-label>
+                <mat-label *ngIf="valueRadioBtn=='control'">{{ 'FUEL_SUPPLIES.DATA.TYPE_VALORIZATION' | translate
+                    }}</mat-label>
+            </div>
+            <div class="contentSection">
+                <div class="btnShow">
+                    <button mat-raised-button color="primary">Ver</button>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>

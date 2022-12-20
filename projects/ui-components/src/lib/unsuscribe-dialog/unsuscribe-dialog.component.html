@@ -1,0 +1,39 @@
+<div class="container">
+    <form [formGroup]="unsuscribeForm">
+        <div class="titleModal" id="titleModal">
+            <span class="tsp-title">{{TitleModal}}</span>
+        </div>
+        <div class="contentModal  row">
+            <div class="resp">
+                <div class="question">
+                    <mat-label>{{Question}}</mat-label>
+                </div>
+                <div class="btns">
+                    <div class="btnOk ">
+                        <button mat-flat-button mat-button mat-dialog-close color="primary" (click)="Ok()">
+                            {{BtnOk}}
+                        </button>
+                    </div>
+                    <div class="btnCancel">
+                        <button mat-flat-button mat-button mat-dialog-close color="warn">
+                            {{BtnCancel}}
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class=" detail">
+                <div class="labelDetail">
+                    <mat-label class="question">{{SubTitleLabel}}
+                    </mat-label>
+                </div>
+                <div>
+                    <mat-form-field class="generalMatForm" appearance="fill">
+                        <textarea rows="3" matInput class="detailTextArea" formControlName="detail"></textarea>
+                        <mat-error *ngIf="unsuscribeForm.controls.detail.errors?.required">
+                            {{MessageError}}</mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'FUEL_SUPPLIES.TITLES.DETAIL_FUEL_CONSUMPTION' | translate }}</h1>
+    </div>
+    <div class="filters">
+        <div class="row">
+            <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 ">
+                <div class="dateContent row">
+                    <span class="title">{{ 'FUEL_SUPPLIES.DATA.DATE' | translate }}</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>{{ 'FUEL_SUPPLIES.DATA.DATE_FROM' | translate }}</mat-label>
+                            <input matInput [matDatepicker]="picker1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>{{'FUEL_SUPPLIES.DATA.DATE_UNTIL' | translate }}</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 ">
+                <cad-chips-input [items]="fruits" [InputLabel]="'FUEL_SUPPLIES.DATA.FUEL' | translate"
+                    [InputCheckLabel]="'TODAS' | translate"></cad-chips-input>
+            </div>
+            <div class="col-12 col-sm-2 md-1 col-lg-1 col-xl-1 btnSearch">
+                <div>
+                    <button mat-raised-button color="primary"><mat-icon>search</mat-icon></button>
+                </div>
+            </div>
+            <div class="col-12 col-sm-5 col-md-5 col-lg-5 col-xl-5 ">
+                <cad-chips-input [items]="fruits" [InputLabel]="'FUEL_SUPPLIES.DATA.LICENSE_PLATE' | translate"
+                    [InputCheckLabel]="'TODAS' | translate"></cad-chips-input>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-4">
+        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+        </cad-table-filter>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<!--
+<sw-page-head [subtitle]="'DRIVERS_OPERATORS.CONTROL_PANEL' | translate" [title]="'DRIVERS_OPERATORS.TITLE' | translate"
+    style="margin-top: 20px">
+    <button class="button button_colorSuccess button_shadow" (click)="openRegister()" id="goToCreate">
+        <i class="mdi mdi-plus buttonIcon_right"></i> {{ 'DRIVERS_OPERATORS.NEW' | translate }}
+    </button>
+    <button class="button button_colorSuccess button_shadow" (click)="openShow()" id="goToCreate">
+        <i class="mdi mdi-plus buttonIcon_right"></i> {{ 'DRIVERS_OPERATORS.SHOW' | translate }}
+    </button>
+</sw-page-head>
+-->
+
+<!--LISTAR CONDUCTORES-->
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'DRIVERS_OPERATORS.TITLE' | translate }}</h1>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4 ">
+        <div class="filter-container">
+            <label class="title-filter">{{'VISUALIZE_DRIVER.DRIVER.LICENSE_EXPIRATION' | translate}}</label><br>
+            <div class="col inputfechas">
+
+                <mat-form-field class="dateSelectContainer">
+                    <mat-label>{{ 'FUEL_SUPPLY_CONTRACT.LABELS.FROM' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="from" />
+                    <mat-datepicker-toggle matSuffix [for]="from"> </mat-datepicker-toggle>
+                    <mat-datepicker #from></mat-datepicker>
+                </mat-form-field>
+
+                <mat-form-field class="dateSelectContainerfecha">
+                    <mat-label>{{ 'FUEL_SUPPLY_CONTRACT.LABELS.UNTIL' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="until" />
+                    <mat-datepicker-toggle matSuffix [for]="until"> </mat-datepicker-toggle>
+                    <mat-datepicker #until></mat-datepicker>
+                </mat-form-field>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-12  col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="classCategory" [InputLabel]="'VISUALIZE_DRIVER.DRIVER.CLASS_CATEGORY' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+    <div class="col-12  col-md-2 col-lg-2 col-xl-2 button-search-container">
+        <button class="button-actions">
+            <mat-icon class="tsp-icons">search</mat-icon>
+        </button>
+    </div>
+    <div class="col-12 col-md-2 col-lg-2 col-xl-2 ">
+        <button mat-raised-button color="primary" (click)="openRegister()" id="goToCreate"><i
+                class="mdi mdi-plus buttonIcon_right"></i>{{'FUEL_SUPPLY_CONTRACT.NEW'|
+            translate}}</button>
+    </div>
+</div>
+<div class="table row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openShow()" id="goToCreate"
+        (editEvent)="editEvent($event)" (deleteEvent)="deleteEvent($event)"></cad-table-filter>
+</div>

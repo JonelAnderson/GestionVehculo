@@ -1,0 +1,107 @@
+<div class="container-fluid">
+    <div class=" row register-background">
+        <div class="view-title-container">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals">
+                {{'LICENSE_REVALIDATION.TITLE' | translate}}
+            </h1>
+        </div>
+        <mat-dialog-content>
+            <form action="">
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title">
+                                {{'LICENSE_REVALIDATION.DATA_LICENCE' | translate}}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div>
+                                <label class="label label_bold">{{'LICENSE_REVALIDATION.REVALIDATION.LICENSE_NUMBER' |
+                                    translate}}:</label>
+                                <br />
+                                <label class="label">X89765TY56</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div>
+                                <label class="label label_bold">{{'LICENSE_REVALIDATION.REVALIDATION.CLASS' |
+                                    translate}}:</label>
+                                <br />
+                                <label class="label">A</label>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field appearance="fill" style="width:60%;">
+                                    <mat-label>{{ 'LICENSE_REVALIDATION.REVALIDATION.CATEGORY' | translate }}
+                                    </mat-label>
+                                    <mat-select formControlName="brand" class="tsp-select-input">
+                                        <mat-option *ngFor="let brandMaster of brandMasters" [value]="brandMaster.id">
+                                            {{brandMaster.name}}
+                                        </mat-option>
+                                    </mat-select>
+                                    <mat-error
+                                        *ngIf="revalidateForm.controls.category.errors?.required && revalidateForm.controls.category.touched">
+                                        {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field class="dateSelectContainer" appearance="fill">
+                                    <mat-label>{{ 'LICENSE_REVALIDATION.REVALIDATION.EXPEDITION_DATE' | translate }}
+                                    </mat-label>
+                                    <input matInput [matDatepicker]="from" />
+                                    <mat-datepicker-toggle matSuffix [for]="from"> </mat-datepicker-toggle>
+                                    <mat-datepicker #from></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field class="dateSelectContainerfecha" appearance="fill">
+                                    <mat-label>{{ 'LICENSE_REVALIDATION.REVALIDATION.EXPIRATION_DATE' | translate }}
+                                    </mat-label>
+                                    <input matInput [matDatepicker]="until" />
+                                    <mat-datepicker-toggle matSuffix [for]="until"> </mat-datepicker-toggle>
+                                    <mat-datepicker #until></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-4 col-md-4 col-lg-4 col-xl-4">
+                            <div class="input-with-button">
+                                <mat-form-field class="general-input">
+                                    <mat-label>{{ 'LICENSE_REVALIDATION.REVALIDATION.LICENSE_DOCUMENT' | translate }}
+                                    </mat-label>
+                                    <input matInput
+                                        placeholder="{{ 'LICENSE_REVALIDATION.REVALIDATION.LICENSE_DOCUMENT' | translate }}"
+                                        formControlName="document" maxlength="6"
+                                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                </mat-form-field>
+                                <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                                    class="round-button">
+                                    <mat-icon class="icons-with-input">add</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </mat-dialog-content>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" [disabled]="revalidateForm.invalid">
+                    <mat-icon class="icons">save</mat-icon>{{ 'LICENSE_REVALIDATION.REVALIDATION.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'LICENSE_REVALIDATION.REVALIDATION.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,305 @@
+<div class="container">
+    <div class="tsp-title-header-modal titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 row leftSectionTitleModal">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 titleNameModal">
+                <div>
+                    <span class="tsp-title-modals">{{'PIP.TITLE' | translate}}</span>&nbsp;
+                </div>
+                <div>
+                    <span>AIU-056</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+                <div class="state">
+                    <span>CADUCADO</span>&nbsp;
+                </div>
+            </div>
+
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'PIP.SHOW_PIP.BTN.UNSUSCRIBE'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowPIP -->
+    <div mat-dialog-content class="container">
+        <!-- Section Vehicle -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="DataVehicle">
+                <div class="title">
+                    <mat-label>{{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'| translate}}</mat-label>
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label> {{'PIP.DATA.LICENSE_PLATE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span> AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.AREA'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.RESPONSIBLE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.TYPE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.BRAND'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.MODEL'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.COLOR'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.YEAR'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.N_ENGINE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span> AIU-586</span>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.SERIE'| translate}}:</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Enterprise -->
+        <div class="Section">
+            <div class="DataEnterprise">
+                <div class="title">
+                    <span>{{'PIP.SECTIONS_TITLES.INSURANCE_COMPANY' | translate}}</span>
+                </div>
+                <div class="container row">
+                    <div class="col-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.INSURANCE' | translate}}</mat-label>
+                        </div>
+                    </div>
+                    <div class="col-12 contentAtribute">
+                        <div>
+                            <span>PACIFICO S.A.C</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Poliza -->
+        <div class="Section">
+            <div class="DataPoliza">
+                <div class="title">
+                    <mat-label>{{'PIP.SECTIONS_TITLES.POLICY_DATA' | translate}}</mat-label>
+                </div>
+
+                <div class="container row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'PIP.DATA.POLICY_N' | translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>13ASB563-38</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="row">
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                <div class="title">
+                                    <mat-label>{{'PIP.DATA.POLICY_VALIDITY' | translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span>12/05/2021</span>
+                                    <span>12/05/2022</span>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                <div class="title">
+                                    <mat-label>{{'PIP.DATA.VALIDITY_PIP_CERTIFICATE' | translate}}</mat-label>
+                                </div>
+                                <div>
+                                    <span>12/05/2021</span>
+                                    <span>12/05/2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Insured -->
+        <div class="Section">
+            <div class="Insured">
+                <div class="title">
+                    <span>{{'PIP.SECTIONS_TITLES.INSURED' | translate}}</span>
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span>{{'PIP.DATA.IDENTIFICATION_DOCUMENT' | translate}}</span>
+                        </div>
+                        <div>
+                            10713878184
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span>{{'PIP.DATA.BUSINESS_NAME' | translate}}</span>
+                        </div>
+                        <div>
+                            <span>borja reyes</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span>{{'PIP.DATA.DATE_OF_ISSUE' | translate}}</span>
+                        </div>
+                        <div>
+                            <span>19/11/2022</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span>{{'PIP.DATA.BROADCAST_TIME' | translate}}</span>
+                        </div>
+                        <div>
+                            <span>16:00</span>
+                        </div>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <span>{{'PIP.DATA.PREMIUM_AMOUNT' | translate}}</span>
+                        </div>
+                        <div>
+                            <span>2000</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section File Uploaded -->
+        <div class="Section">
+            <div class="FileUploaded">
+                <div class="title">
+                    <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' | translate}}</span>
+                </div>
+                <div class="container attachmentsFile">
+                    <div class="contentAttachment">
+                        <div class="contentAttachmentFile">
+                            <div class="iconFile">
+                                <mat-icon>picture_as_pdf</mat-icon>
+                            </div>
+                            <div>
+                                <div class="nameFile">SOAT.PDF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

@@ -1,0 +1,108 @@
+[
+  {
+    "text": "Vehiculos",
+    "icon": "airport_shuttle",
+    "children": [
+      {
+        "text": "Show Vehicles",
+        "icon": "directions_car",
+        "routerLink": "/private/vehicles"
+      },
+      {
+        "text": "Ver SOAT",
+        "icon": "health_and_safety",
+        "routerLink": "/private/pip"
+      },
+      {
+        "text": "Ver Revisión Técnica",
+        "icon": "car_repair",
+        "routerLink": "/private/vehicleInspections"
+      },
+      {
+        "text": "Ver Solicitud de movilidad",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/mobilityRequest"
+      },
+      {
+        "text": "Ver Mantenimiento",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/maintenances"
+      }
+    ]
+  },
+  {
+    "text": "Combustible",
+    "icon": "local_gas_station",
+    "children": [
+      {
+        "text": "Ver abastecimientos",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/fuelSupplies"
+      },
+      {
+        "text": "Control Consumo Combustible",
+        "icon": "format_list_bulleted",
+        "routerLink": "/private/fuelSupplies/detailFuelConsumption"
+      },
+      {
+        "text": "Precios Combustible",
+        "icon": "price_change",
+        "routerLink": "/private/fuelSupplies/fuelPrice"
+      },
+      {
+        "text": "Reporte",
+        "icon": "summarize",
+        "routerLink": "/private/fuelSupplies/reportValorization"
+      }
+    ]
+  },
+  {
+    "text": "Vehicle Inspections",
+    "icon": "local_activity",
+    "routerLink": "/private/vehicle-inspections"
+  },
+  {
+    "text": "Supply Contracts",
+    "icon": "local_activity",
+    "children": [
+      {
+        "text": "Ver abastecimiento",
+        "icon": "local_activity",
+        "routerLink": "/private/fuelSupplyContract"
+      }
+    ]
+  },
+  {
+    "text": "Fuel Supply",
+    "icon": "local_activity",
+    "routerLink": "/private/fuel-fupply"
+  },
+  {
+    "text": "Conductor",
+    "icon": "local_activity",
+    "routerLink": "/private/driver-licenses",
+    "children": [
+      {
+        "text": "Ver conductores",
+        "icon": "local_activity",
+        "routerLink": "/private/driversOperators"
+      }
+    ]
+  },
+  {
+    "text": "Masters",
+    "icon": "key",
+    "routerLink": "/private/masters"
+  },
+  {
+    "text": "Alertas",
+    "icon": "add_alert",
+    "children": [
+      {
+        "text": "Ver alertas",
+        "icon": "add_alert",
+        "routerLink": "/private/alerts"
+      }
+    ]
+  }
+]

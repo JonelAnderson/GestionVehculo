@@ -1,0 +1,44 @@
+@import 'variables';
+
+
+
+.view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.register-background {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-save {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+}
+
+.marging-buttons {
+    margin-left: 80px;
+
+}
+
+.textconfirmation {
+    margin-top: 50px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}

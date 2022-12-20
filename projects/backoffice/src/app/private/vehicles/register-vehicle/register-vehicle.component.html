@@ -1,0 +1,198 @@
+<div class="container-fluid">
+  <div class="row register-background ">
+    <div class="view-title-container">
+      <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'VEHICLES.TITLES.REGISTER' | translate }}</h1>
+    </div>
+    <mat-dialog-content>
+      <form [formGroup]="vehicleForm">
+        <div class="row seccion-container">
+          <div class="row">
+            <hr class="ks-line" />
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="tsp-secction-title">
+                {{ 'VEHICLES.LABELS.GENERAL_DATE' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+              <mat-form-field class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.LICENSE_PLATE' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'VEHICLES.LABELS.LICENSE_PLATE' | translate }}"
+                  formControlName="licensePlate" maxlength="6"
+                  oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                <mat-error
+                  *ngIf="vehicleForm.controls.licensePlate.errors?.required && vehicleForm.controls.licensePlate.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                <mat-error
+                  *ngIf="vehicleForm.controls.licensePlate.errors?.pattern && vehicleForm.controls.licensePlate.touched">
+                  {{ 'VEHICLES.ERRORS.MIN_SIX_CARACTERS' | translate }}</mat-error>
+              </mat-form-field>
+
+              <mat-form-field appearance="fill" class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.ASSIGNED_AREA' | translate }}</mat-label>
+                <mat-select formControlName="assignedArea">
+                  <mat-option *ngFor="let assignedAreaMaster of assignedAreaMasters" [value]="assignedAreaMaster.id">
+                    {{assignedAreaMaster.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="vehicleForm.controls.assignedArea.errors?.required && vehicleForm.controls.assignedArea.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+
+            </div>
+            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="input-with-button">
+                <mat-form-field appearance="fill" style="width:80%;">
+                  <mat-label>{{ 'VEHICLES.LABELS.BRAND' | translate }}</mat-label>
+                  <mat-select formControlName="brand" class="tsp-select-input">
+                    <mat-option *ngFor="let brandMaster of brandMasters" [value]="brandMaster.id">
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="vehicleForm.controls.brand.errors?.required && vehicleForm.controls.brand.touched">
+                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                </mat-form-field>
+                <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                  class="round-button" (click)="CreateMasterDetailBrand($event)">
+                  <mat-icon class="icons-with-input">add</mat-icon>
+                </button>
+              </div>
+
+
+              <div class="input-with-button">
+                <mat-form-field appearance="fill" class="general-input" style="width:80%;">
+                  <mat-label>{{ 'VEHICLES.LABELS.MODEL' | translate }}</mat-label>
+                  <mat-select formControlName="model">
+                    <mat-option *ngFor="let modelMaster of modelMasters" [value]="modelMaster.id">
+                      {{modelMaster.name}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="vehicleForm.controls.model.errors?.required && vehicleForm.controls.model.touched">
+                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                </mat-form-field>
+                <button mat-fab color="accent" aria-label="Example icon button with a bookmark icon"
+                  class="round-button" (click)="CreateMasterDetailModel($event)">
+                  <mat-icon class="icons-with-input">add</mat-icon>
+                </button>
+              </div>
+              <div>
+                <mat-form-field appearance="fill" class="general-input" style="width:80%;">
+                  <mat-label>{{ 'VEHICLES.LABELS.YEAR' | translate }}</mat-label>
+                  <mat-select formControlName="year">
+                    <mat-option *ngFor="let year of years" [value]="year">
+                      {{year}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error *ngIf="vehicleForm.controls.year.errors?.required && vehicleForm.controls.year.touched">
+                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+              <div class="input-with-button">
+                <mat-form-field appearance="fill" class="general-input">
+                  <mat-label>{{ 'VEHICLES.LABELS.VEHICLE_TYPE' | translate }}</mat-label>
+                  <mat-select formControlName="vehicleType">
+                    <mat-option *ngFor="let vehicleTypeMaster of vehicleTypeMasters" [value]="vehicleTypeMaster.id">
+                      {{vehicleTypeMaster.name}}
+                    </mat-option>
+                  </mat-select>
+                  <mat-error
+                    *ngIf="vehicleForm.controls.vehicleType.errors?.required && vehicleForm.controls.vehicleType.touched">
+                    {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                </mat-form-field>
+                <button mat-fab color="accent" class="round-button" (click)="CreateMasterDetailVehicleType($event)">
+                  <mat-icon class="icons-with-input">add</mat-icon>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row seccion-container">
+          <div class="row">
+            <hr class="ks-line" />
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+              <div class="tsp-secction-title">
+                {{ 'VEHICLES.LABELS.FEATURES' | translate }}
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.COLOR' | translate }}</mat-label>
+                <input type="text" matInput placeholder="{{ 'VEHICLES.LABELS.COLOR' | translate }}"
+                  formControlName="color">
+                <mat-error *ngIf="vehicleForm.controls.color.errors?.pattern && vehicleForm.controls.color.touched">
+                  Solo se permiten letras</mat-error>
+                <mat-error *ngIf="vehicleForm.controls.color.errors?.required && vehicleForm.controls.color.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.FUEL_TYPE' | translate }}</mat-label>
+                <mat-select formControlName="fuelType">
+                  <mat-option *ngFor="let fuelTypeMaster of fuelTypeMasters" [value]="fuelTypeMaster.id">
+                    {{fuelTypeMaster.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="vehicleForm.controls.fuelType.errors?.required && vehicleForm.controls.fuelType.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+              <mat-form-field class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.ENGINE_NUMBER' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'VEHICLES.LABELS.ENGINE_NUMBER' | translate }}"
+                  formControlName="engineNumber">
+
+                <mat-error
+                  *ngIf="vehicleForm.controls.engineNumber.errors?.pattern && vehicleForm.controls.engineNumber.touched">
+                  {{ 'VEHICLES.ERRORS.MAYUSCULE' | translate }}</mat-error>
+                <mat-error
+                  *ngIf="vehicleForm.controls.engineNumber.errors?.required && vehicleForm.controls.engineNumber.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.ENGINE_TYPE' | translate }}</mat-label>
+                <mat-select formControlName="engineType">
+                  <mat-option *ngFor="let engineTypeMaster of engineTypeMasters" [value]="engineTypeMaster.id">
+                    {{engineTypeMaster.name}}
+                  </mat-option>
+                </mat-select>
+                <mat-error
+                  *ngIf="vehicleForm.controls.engineType.errors?.required && vehicleForm.controls.engineType.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+              </mat-form-field>
+              <mat-form-field class="general-input">
+                <mat-label>{{ 'VEHICLES.LABELS.SERIAL_NUMBER' | translate }}</mat-label>
+                <input matInput placeholder="{{ 'VEHICLES.LABELS.SERIAL_NUMBER' | translate }}"
+                  formControlName="serialNumber">
+
+                <mat-error
+                  *ngIf="vehicleForm.controls.serialNumber.errors?.pattern && vehicleForm.controls.serialNumber.touched">
+                  {{ 'VEHICLES.ERRORS.MAYUSCULE_LONG' | translate }}</mat-error>
+                <mat-error
+                  *ngIf="vehicleForm.controls.serialNumber.errors?.required && vehicleForm.controls.serialNumber.touched">
+                  {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+
+              </mat-form-field>
+            </div>
+          </div>
+        </div>
+      </form>
+    </mat-dialog-content>
+    <div class="row mt-4">
+      <div class="buttons-container">
+        <button mat-raised-button class="tsp-button-success" (click)="saveVehicle()" [disabled]="vehicleForm.invalid">
+          <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+        </button>
+        <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+          <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

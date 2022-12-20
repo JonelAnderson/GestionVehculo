@@ -1,0 +1,163 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.mat-dialog-content {
+    // width: 880px;
+    // height: 520px;
+    margin: 0;
+    word-wrap: break-word;
+    max-height: 360px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 906px;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.325rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: center;
+    }
+
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    // padding-left: 20px;
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    margin-top: 10px;
+    margin-left: 4px;
+}
+
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: bold;
+    @extend .tsp-title;
+}
+
+
+.flex {
+    display: flex;
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.SaveEdit {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.btnSearch {
+    min-width: 0;
+    margin-left: 10px;
+}
+
+.generalMatForm {
+    width: 100%;
+}
+
+.searchPlate {
+    max-width: 120px;
+
+    input {
+        text-align: center;
+    }
+}
+
+.table {
+    input {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
+.titleSection {
+    margin-bottom: 15px;
+    @extend .title;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+    .titleModal {
+        text-align: center;
+    }
+
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: end;
+    margin-bottom: 11px;
+}
+
+.mat-raised-button {
+    min-width: none;
+}
+
+.marging-buttons {
+    margin-left: 5px;
+}

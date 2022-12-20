@@ -1,0 +1,344 @@
+<div class="container">
+    <form [formGroup]="fuelSpplyForm" (ngSubmit)="saveFuelSupply()">
+        <!-- Title Modal -->
+        <div class="titleModal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <div>
+                    <span class="tsp-title-modals">{{'FUEL_SUPPLIES.TITLES.REGISTER' | translate}}</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <!-- Content of Register Fuel Supply -->
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <div class="Section">
+                <hr class="ks-line" />
+                <div class="DataVehicle">
+                    <div class="titleSection">
+                        <span>{{'FUEL_SUPPLIES.DATA.VEHICLE_DATA'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- PLATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="searchPlate">
+                                    <mat-label class="title">{{'FUEL_SUPPLIES.DATA.LICENSE_PLATE'|
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput type="text" formControlName="licencePlate" maxlength="6">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" fuelSpplyForm.controls.licencePlate.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <button mat-flat-button color="primary" class="btnSearch"
+                                    (click)="searchVehicle(fuelSpplyForm.value.licencePlate)">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- AREA -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.AREA'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.area}}</span>
+                            </div>
+                        </div>
+                        <!-- RESPONSIBLE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.RESPONSIBLE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- TYPE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.TYPE'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.typeVehicle}}</span>
+                            </div>
+                        </div>
+                        <!-- BRAND -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.BRAND'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.brand}}</span>
+                            </div>
+                        </div>
+                        <!-- MODEL -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.MODEL'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.model}}</span>
+                            </div>
+                        </div>
+                        <!-- COLOR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.COLOR'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.feature.color}}</span>
+                            </div>
+                        </div>
+                        <!-- YEAR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.YEAR'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.year}}</span>
+                            </div>
+                        </div>
+                        <!-- N° ENGINE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.N_ENGINE'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.feature.nEngine}}</span>
+                            </div>
+                        </div>
+                        <!-- N° SERIE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.SERIE'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.feature.nSerie}}</span>
+                            </div>
+                        </div>
+                        <!-- TYPE SUPPLY -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'FUEL_SUPPLIES.DATA.TYPE_SUPPLY'| translate}}</mat-label>
+                            </div>
+                            <div *ngFor="let item of arrVehicle">
+                                <span>{{item?.feature.typeSupply}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Dispatch -->
+            <div class="Section">
+                <div class="DispatchData">
+                    <div class="titleSection">
+                        <span>{{'FUEL_SUPPLIES.DATA.DISPATCH_DATA'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- Dispach Note -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{ 'FUEL_SUPPLIES.DATA.DISPATCH_NOTE' | translate }}
+                                    </mat-label>
+                                    <input matInput type="number" formControlName="dispachNote">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" fuelSpplyForm.controls.dispachNote.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Dispach Date -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{'FUEL_SUPPLIES.DATA.DISPATCH_DATE' | translate}}
+                                    </mat-label>
+                                    <input matInput startView="multi-year" formControlName="dispachDate"
+                                        [matDatepicker]="dispachDate">
+                                    <mat-datepicker #dispachDate startView="multi-year">
+                                    </mat-datepicker>
+                                    <mat-datepicker-toggle matSuffix [for]="dispachDate">
+                                    </mat-datepicker-toggle>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.dispachDate.errors?.required && fuelSpplyForm.controls.dispachDate.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                                    </mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Driver -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label> {{'FUEL_SUPPLIES.DATA.DRIVER'|
+                                        translate}} </mat-label>
+                                    <mat-select formControlName="driver">
+                                        <mat-option *ngFor="let insurance of insurances" [value]="insurance.value">
+                                            {{ insurance.value }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.driver.errors?.required && fuelSpplyForm.controls.driver.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- DispachTime -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{'FUEL_SUPPLIES.DATA.DISPATCH_TIME' | translate}}
+                                    </mat-label>
+                                    <input matInput type="time" formControlName="dispatchTime" required />
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.dispatchTime.errors?.required && fuelSpplyForm.controls.dispatchTime.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Odometer -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{ 'FUEL_SUPPLIES.DATA.ODOMETER' | translate }}
+                                    </mat-label>
+                                    <input matInput type="text" formControlName="odometer">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" fuelSpplyForm.controls.odometer.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Area -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label> {{'FUEL_SUPPLIES.DATA.AREA'|
+                                        translate}} </mat-label>
+                                    <mat-select formControlName="area">
+                                        <mat-option *ngFor="let insurance of insurances" [value]="insurance.value">
+                                            {{ insurance.value }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.area.errors?.required && fuelSpplyForm.controls.area.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- Contract -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label> {{'FUEL_SUPPLIES.DATA.CONTRACT'| translate}} </mat-label>
+                                    <mat-select formControlName="contract">
+                                        <mat-option *ngFor="let insurance of insurances" [value]="insurance.value">
+                                            {{ insurance.value }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.contract.errors?.required && fuelSpplyForm.controls.contract.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Section Supply -->
+            <div class="Section">
+                <div class="DispatchData">
+                    <div class="titleSection">
+                        <span>{{'FUEL_SUPPLIES.DATA.SUPPLIYING'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label> {{'FUEL_SUPPLIES.DATA.CONCEPT'|
+                                        translate}} </mat-label>
+                                    <mat-select formControlName="concept" (ngModelChange)="addConcept($event)" #concept>
+                                        <mat-option *ngFor="let item of fuelSupliesConcept " [value]="item.item"
+                                            #concept>
+                                            {{ item.concepto }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="fuelSpplyForm.controls.contract.errors?.required && fuelSpplyForm.controls.contract.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                            <p-table [value]="arrayTable" class="table">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>{{'FUEL_SUPPLIES.DATA.ITEM'| translate}}</th>
+                                        <th>{{'FUEL_SUPPLIES.DATA.CONCEPT'| translate}}</th>
+                                        <th>{{'FUEL_SUPPLIES.DATA.QUANTITY'| translate}}</th>
+                                        <th>{{'FUEL_SUPPLIES.DATA.PU'| translate}}</th>
+                                        <th>{{'FUEL_SUPPLIES.DATA.AMOUNT'| translate}}</th>
+                                        <th>{{'FUEL_SUPPLIES.DATA.OPTIONS'| translate}}</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-FuelSuplies let-rowIndex="rowIndex">
+                                    <tr>
+                                        <td>{{FuelSuplies.item}}</td>
+                                        <td>{{FuelSuplies.concepto}}</td>
+                                        <td><input type="number" value=1 (ngModelChange)="inputChanged()">
+                                        </td>
+                                        <td><input type="number" value="{{FuelSuplies.pu}}">
+                                        </td>
+                                        <td><input type="number"
+                                                value="{{FuelSuplies.pu*FuelSuplies.cantidad | number}}">
+                                        </td>
+                                        <!-- value="{{fuelSpplyForm.value.amount*FuelSuplies.pu | number}}" -->
+                                        <td><button mat-raised-button color="warn"
+                                                (click)="removeData(FuelSuplies.item)">
+                                                <mat-icon>close</mat-icon>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="rowIndex+1==arrayTable.length">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>{{'FUEL_SUPPLIES.DATA.TOTAL'| translate}}</td>
+                                        <td colspan="3">{{fuelSpplyForm.value.amount}}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" [disabled]="fuelSpplyForm.invalid">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,52 @@
+<div class="register-background">
+    <div class="row">
+        <div class="view-title-container">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{Title}}</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <form [formGroup]="detailMasterForm">
+        <div class="form-container">
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4">
+                <mat-form-field appearance="fill">
+                    <mat-label> {{CodeInput}}</mat-label>
+                    <input matInput placeholder="{{CodeInput}}" formControlName="code">
+                    <mat-error
+                        *ngIf="detailMasterForm.controls.code.errors?.required && detailMasterForm.controls.code.touched">
+                        {{ errorMessageRequired}}</mat-error>
+                    <mat-error
+                        *ngIf="detailMasterForm.controls.code.errors?.pattern && detailMasterForm.controls.code.touched">
+                        {{ errorMessageUpperCase}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12 mt-4">
+                <mat-form-field appearance="fill">
+                    <mat-label> {{NameInput}}</mat-label>
+                    <input matInput placeholder="{{NameInput}}" formControlName="name">
+                    <mat-error
+                        *ngIf="detailMasterForm.controls.name.errors?.required && detailMasterForm.controls.name.touched">
+                        {{ errorMessageRequired}}</mat-error>
+                    <mat-error
+                        *ngIf="detailMasterForm.controls.name.errors?.pattern && detailMasterForm.controls.name.touched">
+                        {{ errorMessageUpperCase}}</mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="row mt-2">
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+        <button mat-raised-button color="primary" class="tsp-button-success" [disabled]="!detailMasterForm.valid"
+            (click)="sendDetailMaster()">
+            <mat-icon>save</mat-icon>{{ButtonSave}}
+        </button>
+    </div>
+    <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 ">
+        <button mat-flat-button mat-button mat-dialog-close color="warn" class="tsp-button-delete"
+            (click)="resetForm()">
+            <mat-icon>close</mat-icon>{{ButtonClose}}
+        </button>
+    </div>
+</div>

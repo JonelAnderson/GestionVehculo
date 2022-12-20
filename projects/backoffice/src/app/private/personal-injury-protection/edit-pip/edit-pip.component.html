@@ -1,0 +1,430 @@
+<div class="container">
+    <form [formGroup]="PIPForm" (ngSubmit)="editPIP()">
+        <!-- Title Modal -->
+        <div class="titleModal row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-2 titleNameModal">
+                <div>
+                    <span class="tsp-title-modals">{{'PIP.TITLE' | translate}}</span>&nbsp;
+                </div>
+                <div>
+                    <span>AIU-056</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="state">
+                    <span>CADUCADO</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <!-- Content of EditPIP -->
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <div class="Section">
+                <hr class="ks-line" />
+                <div class="DataVehicle">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- PLATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="searchPlate">
+                                    <mat-label class="title">{{'PIP.DATA.LICENSE_PLATE'|
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput type="text" formControlName="licencePlate" maxlength="6">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" PIPForm.controls.licencePlate.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <button mat-flat-button color="primary" class="btnSearch">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- AREA -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.AREA'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- RESPONSIBLE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.RESPONSIBLE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- TYPE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.TYPE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- BRAND -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.BRAND'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- MODEL -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.MODEL'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- COLOR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.COLOR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- YEAR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.YEAR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- N° ENGINE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.N_ENGINE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+                        <!-- N° SERIE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.SERIE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Enterprise -->
+            <div class="Section">
+                <div class="DataEnterprise">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.INSURANCE_COMPANY' | translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <div class="col-12 contentAtribute">
+                            <div>
+                                <mat-form-field class="generalMatForm" appearance="fill">
+                                    <mat-label> {{'PIP.DATA.INSURANCE'|
+                                        translate}} </mat-label>
+                                    <mat-select formControlName="nameInsureCarrier">
+                                        <mat-option *ngFor="let insurance of insurances" [value]="insurance.value">
+                                            {{ insurance.value }}
+                                        </mat-option>
+                                    </mat-select>
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.nameInsureCarrier.errors?.required && PIPForm.controls.nameInsureCarrier.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Poliza -->
+            <div class="Section">
+                <div class="DataPoliza">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.POLICY_DATA' | translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- N° POLIZA -->
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                            <div class="title">
+                                <mat-form-field class="generalMatForm">
+                                    <mat-label class="title">{{'PIP.DATA.POLICY_N'|
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput
+                                        placeholder="{{ 'PIP.EDIT_PIP.SECTION_POLIZA.PLACEHOLDERS.N_POLIZA_CERTIFIED' | translate }}"
+                                        formControlName="NPoliza">
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.NPoliza.errors?.required && PIPForm.controls.NPoliza.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="row">
+                                <!-- VALITY POLIZA -->
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                    <div class="title">
+                                        <mat-label>{{'PIP.DATA.POLICY_VALIDITY' | translate}}
+                                        </mat-label>
+                                    </div>
+                                    <div>
+                                        <!-- StartDatePoliza -->
+                                        <mat-form-field appearance="fill" class="generalMatForm">
+                                            <mat-label>{{'PIP.DATA.START_DATE' | translate}}
+                                            </mat-label>
+                                            <input matInput [matDatepicker]="startDatePoliza" [min]="minDate"
+                                                [max]="maxDate" formControlName="startDatePoliza" startView="multi-year"
+                                                placeholder="{{'PIP.EDIT_PIP.SECTION_POLIZA.PLACEHOLDERS.START_DATE' | translate}}"
+                                                (dateChange)="StartDatePoliza()">
+                                            <mat-datepicker #startDatePoliza startView="multi-year">
+                                            </mat-datepicker>
+                                            <mat-datepicker-toggle matSuffix [for]="startDatePoliza">
+                                            </mat-datepicker-toggle>
+                                            <!-- Messages Error using Validation-->
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.startDatePoliza.errors?.required && PIPForm.controls.startDatePoliza.touched">
+                                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <!-- EndDatePoliza -->
+                                        <mat-form-field appearance="fill" class="generalMatForm">
+                                            <mat-label>{{'PIP.DATA.END_DATE' | translate}}
+                                            </mat-label>
+                                            <input matInput [matDatepicker]="endDatePoliza" [min]="minDate"
+                                                [max]="maxDate" formControlName="endDatePoliza" startView="multi-year"
+                                                placeholder="{{'PIP.EDIT_PIP.SECTION_POLIZA.PLACEHOLDERS.END_DATE' | translate}}"
+                                                (dateChange)="EndDatePoliza()">
+                                            <mat-datepicker #endDatePoliza startView="multi-year">
+                                            </mat-datepicker>
+                                            <mat-datepicker-toggle matSuffix [for]="endDatePoliza">
+                                            </mat-datepicker-toggle>
+                                            <!-- Messages Error using Validation-->
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.endDatePoliza.errors?.ValidationEndDate && PIPForm.controls.endDatePoliza.touched">
+                                                {{ 'PIP.EDIT_PIP.ERRORS.LIMIT_END_DATE' | translate }}
+                                            </mat-error>
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.endDatePoliza.errors?.required && PIPForm.controls.endDatePoliza.touched">
+                                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                    </div>
+                                </div>
+                                <!-- VALITY CERTIFIED -->
+                                <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                                    <div class="title">
+                                        <mat-label>{{'PIP.DATA.VALIDITY_PIP_CERTIFICATE' | translate}}
+                                        </mat-label>
+                                    </div>
+                                    <div>
+                                        <mat-form-field appearance="fill" class="generalMatForm">
+                                            <mat-label>{{'PIP.DATA.START_DATE' | translate}}
+                                            </mat-label>
+                                            <input matInput [matDatepicker]="startDateSOAT" [min]="minDate"
+                                                [max]="maxDate" formControlName="startDateSOAT" startView="multi-year"
+                                                placeholder="{{ 'PIP.EDIT_PIP.SECTION_POLIZA.PLACEHOLDERS.START_DATE' | translate }}"
+                                                (dateChange)="StartDateSOAT()">
+                                            <mat-datepicker #startDateSOAT startView="multi-year"></mat-datepicker>
+                                            <mat-datepicker-toggle matSuffix [for]="startDateSOAT">
+                                            </mat-datepicker-toggle>
+                                            <!-- Message Error Using Validation -->
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.startDateSOAT.errors?.required && PIPForm.controls.startDateSOAT.touched">
+                                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                                            </mat-error>
+                                        </mat-form-field>
+                                        <mat-form-field appearance="fill" class="generalMatForm">
+                                            <mat-label>{{'PIP.DATA.END_DATE' | translate}}
+                                            </mat-label>
+                                            <input matInput [matDatepicker]="endDateSOAT" [min]="minDate"
+                                                [max]="maxDate" formControlName="endDateSOAT" startView="multi-year"
+                                                placeholder="{{ 'PIP.DATA.END_DATE' | translate }}"
+                                                (dateChange)="EndDateSOAT()">
+                                            <mat-datepicker #endDateSOAT startView="multi-year"></mat-datepicker>
+                                            <mat-datepicker-toggle matSuffix [for]="endDateSOAT">
+                                            </mat-datepicker-toggle>
+                                            <!-- Message Error Using Validation -->
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.endDateSOAT.errors?.ValidationEndDate && PIPForm.controls.endDateSOAT.touched">
+                                                {{ 'PIP.EDIT_PIP.ERRORS.LIMIT_END_DATE' | translate }}
+                                            </mat-error>
+                                            <mat-error
+                                                *ngIf="PIPForm.controls.endDateSOAT.errors?.required && PIPForm.controls.endDateSOAT.touched">
+                                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}
+                                            </mat-error>
+                                        </mat-form-field>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Insured -->
+            <div class="Section">
+                <div class="Insured">
+                    <div class="title">
+                        <mat-label>{{'PIP.SECTIONS_TITLES.INSURED' | translate}}</mat-label>
+                    </div>
+                    <div class="container row">
+                        <!-- RUC -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class="generalLabel">{{'PIP.DATA.IDENTIFICATION_DOCUMENT' |
+                                        translate}}</mat-label>
+                                    <input matInput disabled value="AAAAAAAAAAA" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- BUSINESS_NAME -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label class="generalLabel">
+                                        {{'PIP.DATA.BUSINESS_NAME' |
+                                        translate}}</mat-label>
+                                    <input matInput disabled value="AAAAAAAAAAA" />
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- DATE -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{'PIP.DATA.DATE_OF_ISSUE' | translate}}</mat-label>
+                                    <input matInput [matDatepicker]="dateInsure" [min]="minDate" [max]="maxDate"
+                                        formControlName="dateInsure" startView="multi-year"
+                                        placeholder="{{'PIP.EDIT_PIP.SECTION_INSURED.PLACEHOLDERS.DATE' | translate}}">
+                                    <mat-datepicker #dateInsure startView="multi-year"></mat-datepicker>
+                                    <mat-datepicker-toggle matSuffix [for]="dateInsure">
+                                    </mat-datepicker-toggle>
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.dateInsure.errors?.required && PIPForm.controls.dateInsure.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- ISSUANCE_TIME -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{'PIP.DATA.BROADCAST_TIME' | translate}}
+                                    </mat-label>
+                                    <input matInput type="time" formControlName="issuanceTime" required />
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.issuanceTime.errors?.required && PIPForm.controls.issuanceTime.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <!-- TOTAL_PRIMA -->
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{'PIP.DATA.PREMIUM_AMOUNT' | translate}}
+                                    </mat-label>
+                                    <input type="number" matInput formControlName="totalPrima" required
+                                        placeholder="{{'PIP.EDIT_PIP.SECTION_INSURED.PLACEHOLDERS.TOTAL_PRIMA'| translate}}" />
+                                    <!-- Message Error Using Validation -->
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.totalPrima.errors?.required && PIPForm.controls.totalPrima.touched">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                    <mat-error
+                                        *ngIf="PIPForm.controls.totalPrima.errors?.pattern && PIPForm.controls.totalPrima.touched">
+                                        {{ 'PIP.EDIT_PIP.ERRORS.ONLYNUMBER' | translate }}</mat-error>
+
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section File Uploaded -->
+            <div class="Section">
+                <div class="FileUploaded">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' | translate}}</span>
+                    </div>
+                    <div class="ContentFileUploaded row">
+                        <div class="attachmentsFile col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" *ngIf="files!=[]">
+                            <div *ngFor="let file of files" class="contentAttachment">
+                                <div class="contentAttachmentFile">
+                                    <div *ngIf="file.type=='application/pdf'" class="iconFile">
+                                        <mat-icon>picture_as_pdf</mat-icon>
+                                    </div>
+                                    <div class="nameFile">
+                                        <div>{{file.name}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="file" id="fileUpload" multiple="multiple" (change)="fileUploaded($event)">
+                        </div>
+                        <div class="btnChangeAndRemove col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnChange">
+                                <button mat-flat-button color="primary" (click)="btn_upload()">
+                                    <mat-icon>autorenew</mat-icon>{{'GENERAL.BUTTONS.CHANGE'| translate}}
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnRemove">
+                                <button mat-flat-button color="warn">
+                                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.REMOVE'| translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+                <button mat-flat-button mat-button mat-dialog-close color="primary">
+                    <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+                </button>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

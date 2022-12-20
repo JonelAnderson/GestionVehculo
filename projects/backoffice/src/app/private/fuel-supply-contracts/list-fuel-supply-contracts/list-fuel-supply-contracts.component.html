@@ -1,0 +1,63 @@
+<div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'FUEL_SUPPLY_CONTRACT.TITLE' | translate }}</h1>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4 ">
+        <div class="filter-container">
+            <label class="title-filter">{{ 'FUEL_SUPPLY_CONTRACT.LABELS.CONTRACT_EXPIRATION' | translate }}</label><br>
+            <div class="col ">
+                <mat-form-field class="dateSelectContainer">
+                    <mat-label>{{ 'FUEL_SUPPLY_CONTRACT.LABELS.FROM' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="from" />
+                    <mat-datepicker-toggle matSuffix [for]="from"> </mat-datepicker-toggle>
+                    <mat-datepicker #from></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="dateSelectContainer">
+                    <mat-label>{{ 'FUEL_SUPPLY_CONTRACT.LABELS.UNTIL' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="until" />
+                    <mat-datepicker-toggle matSuffix [for]="until"> </mat-datepicker-toggle>
+                    <mat-datepicker #until></mat-datepicker>
+                </mat-form-field>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="fruits" [InputLabel]="'FUEL_SUPPLY_CONTRACT.LABELS.CONTRACTOR' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="fruits" [InputLabel]="'FUEL_SUPPLY_CONTRACT.LABELS.CONCEPT' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-multi-check-box-filter [items]="contractState"
+            [GroupName]="'FUEL_SUPPLY_CONTRACT.LABELS.CONTRACT_STATUS' | translate">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-multi-check-box-filter [items]="registerState"
+            [GroupName]="'FUEL_SUPPLY_CONTRACT.LABELS.REGISTER_STATUS' | translate">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-2 col-lg-2 col-xl-2 button-search-container">
+        <button class="button-actions">
+            <mat-icon class="tsp-icons">search</mat-icon>
+        </button>
+    </div>
+    <div class="col-12 col-md-2 col-lg-2 col-xl-2 button-register-container">
+        <button mat-raised-button color="primary" (click)="openRegister()" id="goToCreate"><i
+                class="mdi mdi-plus buttonIcon_right"></i>{{'FUEL_SUPPLY_CONTRACT.NEW'|
+            translate}}</button>
+    </div>
+
+
+
+</div>
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+    </cad-table-filter>
+</div>

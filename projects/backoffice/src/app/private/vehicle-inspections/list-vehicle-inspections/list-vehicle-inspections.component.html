@@ -1,0 +1,131 @@
+<!-- <div class="row">
+    <div class="col tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title">{{ 'VEHICLE_INSPECTIONS.TITLE' | translate }}</h1>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4 ">
+        <div class="filter-container">
+            <div class="tsp-secction-title ">
+                <span class="tsp-font-size-default-title  tsp-font-size-default">
+                    {{'VEHICLE_INSPECTIONS.DATA.DAYS_EXPIRE' | translate}}
+                </span><br>
+            </div>
+            <div class="col inputfechas">
+                <mat-form-field class="dateSelectContainer">
+                    <mat-label>{{ 'GENERAL.LABELS.FROM' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="from" />
+                    <mat-datepicker-toggle matSuffix [for]="from"> </mat-datepicker-toggle>
+                    <mat-datepicker #from></mat-datepicker>
+                </mat-form-field>
+                <mat-form-field class="dateSelectContainerfecha">
+                    <mat-label>{{ 'GENERAL.LABELS.UNTIL' | translate }}</mat-label>
+                    <input matInput [matDatepicker]="until" />
+                    <mat-datepicker-toggle matSuffix [for]="until"> </mat-datepicker-toggle>
+                    <mat-datepicker #until></mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+        <cad-multi-check-box-filter [items]="state" [GroupName]="'VEHICLE_INSPECTIONS.DATA.STATUS' | translate">
+        </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12  col-md-1 col-lg-1 col-xl-1 button-search-container">
+        <button class="button-actions">
+            <mat-icon class="tsp-icons">search</mat-icon>
+        </button>
+    </div>
+    <div class="col-12 col-md-3 col-lg-3 col-xl-3  ">
+        <button mat-raised-button class="buttonHistory" (click)="openRegister()" id="goToCreate"><i
+                class="mdi mdi-plus tsp-icons"></i>{{'VEHICLE_INSPECTIONS.TITLES.NEW'|
+            translate}}</button>
+        <button mat-raised-button class="buttonHistory" (click)="openShowHistory()"
+            id="goToHistory"><mat-icon>history</mat-icon>{{'VEHICLE_INSPECTIONS.TITLES.SHOW_HISTORY'|
+            translate}}</button>
+    </div>
+    <div class="col-12  col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="areas" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.AREA' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+    <div class="col-12  col-md-4 col-lg-4 col-xl-4">
+        <cad-chips-input [items]="areas" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.ENTERPRISES' | translate"
+            [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+
+</div>
+
+<div class="row mt-4">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+    </cad-table-filter>
+</div> -->
+<div class="row">
+    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+        <h1 class="tsp-title tsp-view-title nameView">{{ 'VEHICLE_INSPECTIONS.TITLE' | translate }}</h1>
+    </div>
+    <div class="filters">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 date">
+                <div class="dateContent row">
+                    <span class="title">Fecha</span>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>Date Start</mat-label>
+                            <input matInput [matDatepicker]="picker1">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+                        <mat-form-field appearance="fill" class="generalMatForm">
+                            <mat-label>Date End</mat-label>
+                            <input matInput [matDatepicker]="picker">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <!-- filter state -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 chipsState">
+                <cad-multi-check-box-filter [items]="state" [GroupName]="'VEHICLE_INSPECTIONS.DATA.STATUS' | translate">
+                </cad-multi-check-box-filter>
+            </div>
+            <!-- filter area -->
+            <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 chipsArea">
+                <cad-chips-input [items]="areas" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.AREA' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+            </div>
+            <!-- enterprise -->
+            <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4 chipsEnterprise">
+                <cad-chips-input [items]="areas" [InputLabel]="'VEHICLE_INSPECTIONS.DATA.ENTERPRISES' | translate"
+                    [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+            </div>
+            <!-- buttons search -->
+            <div class="col-12 col-sm-2 md-1 col-lg-1 col-xl-1 btnSearch">
+                <div>
+                    <button mat-raised-button color="primary"><mat-icon>search</mat-icon></button>
+                </div>
+            </div>
+            <!-- buttons new and history -->
+            <div class="col-12 col-sm-6 md-7 col-lg-7 col-xl-7 btnNewAndHistory row">
+                <div class="col-12 col-sm-2 col-md-3 col-lg-2 col-xl-4 contentBTNs">
+                    <div class="btnNew">
+                        <button mat-raised-button color="primary" class="generalMatForm"
+                            (click)="openRegister()"><mat-icon>add</mat-icon>Nuevo</button>
+                    </div>
+                    <div class="btnHistory">
+                        <button mat-raised-button color="primary" (click)="openShowHistory()"
+                            class="generalMatForm"><mat-icon>history</mat-icon>Historial</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- table list vehicle inspections -->
+    <div class="list-vehicle-inspections">
+        <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="searchEvent($event)">
+        </cad-table-filter>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div class="container-fluid">
+    <div class="row register-background">
+        <div class="view-title-container row">
+            <div class="col-12 col-md-10 col-lg-10 col-xl-10 ">
+                <h1 class="tsp-title tsp-view-title tsp-title-modals">{{'VISUALIZE_DRIVER.TITLE'|
+                    translate}}
+                </h1>
+            </div>
+            <div class="col-12 col-md-2 col-lg-2 col-xl-2 ">
+                <div class="optionModal">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                    <button mat-raised-button color="warn" class="btndelete" mat-dialog-close>
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <mat-dialog-content>
+            <form action="">
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-lx-12">
+                            <div class="tsp-secction-title">
+                                {{'VISUALIZE_DRIVER.GENERAL_DATA'| translate}}:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.DRIVER' |
+                                translate}}:</label>
+                            <br />
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.GENDER' |
+                                translate}}:</label>
+                            <br />
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.AGE' |
+                                translate}}:</label>
+                            <br />
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.DIRECTION' |
+                                translate}}:</label>
+                            <br />
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.PHONE' |
+                                translate}}:</label>
+                            <br />
+                            <label class="label label_bold">{{'VISUALIZE_DRIVER.DRIVER.EMAIL' |
+                                translate}}:</label>
+                            <br />
+                        </div>
+                        <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                            <label class="label">CARRILLO TOLEDO LUIS FERNANDO</label>
+                            <br />
+                            <label class="label">MASCULINO</label>
+                            <br />
+                            <label class="label">24</label>
+                            <br />
+                            <label class="label">TICO SL</label>
+                            <br />
+                            <label class="label">992865957</label>
+                            <br />
+                            <label class="label">carrillo.toledo@unas.edu.pe</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title">
+                                {{'VISUALIZE_DRIVER.LICENSES' | translate}}:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <p-table [value]="" class="table">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.ITEM' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.LICENSE_NUMBER' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.CLASS' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.EXPEDITION' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.EXPIRATION' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.LICENSE' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.STATE' | translate}}</th>
+                                        <th>{{'VISUALIZE_DRIVER.DRIVER.OPTIONS' | translate}}</th>
+                                    </tr>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>Q7654RE4365663</td>
+                                        <td>A lla</td>
+                                        <td>20/12/2022</td>
+                                        <td>01/01/23</td>
+                                        <td>Archivo</td>
+                                        <td>Estado</td>
+                                        <td>
+                                            <div>
+                                                <button mat-button (click)="revalidationRegistration()">REV/REC</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="">
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row seccion-container">
+                    <div class="row">
+                        <hr class="ks-line">
+                        <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title">
+                                {{'VISUALIZE_DRIVER.DRIVER.DOCUMENT' | translate}}:
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-icon class="iconFile">picture_as_pdf</mat-icon>
+                    </div>
+                </div>
+            </form>
+        </mat-dialog-content>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button type="submit" mat-raised-button color="warn" class="marging-buttons button-close "
+                    mat-dialog-close>
+                    <mat-icon>close</mat-icon>{{'VISUALIZE_DRIVER.DRIVER.TOCLOSED'|translate}}
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

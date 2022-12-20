@@ -1,0 +1,115 @@
+<div class="container">
+    <div class="row">
+        <div class="view-title-container">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'FUEL_SUPPLIES.TITLES.PRICE_RECORD' |
+                translate }}
+            </h1>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{ 'FUEL_SUPPLIES.FUEL_PRICE.GENERAL_DATA' | translate }}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'FUEL_SUPPLIES.FUEL_PRICE.CONTRACT' | translate }}</mat-label>
+                            <mat-select formControlName="contract">
+                                <mat-option *ngFor="let contract of contracts" [value]="contract.value">
+                                    {{ contract.value }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error
+                                *ngIf="form.controls.contract.errors?.required && form.controls.contract.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-4 col-md-4 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'FUEL_SUPPLIES.FUEL_PRICE.CONTRACTOR' | translate }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'FUEL_SUPPLIES.FUEL_PRICE.CONCEPT' | translate }}</mat-label>
+                            <mat-select formControlName="concept">
+                                <mat-option *ngFor="let concept of contracts" [value]="concept.value">
+                                    {{ concept.value }}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.controls.concept.errors?.required && form.controls.concept.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'FUEL_SUPPLIES.FUEL_PRICE.EFECTIVE_DATE' | translate }} </mat-label>
+                            <input matInput [matDatepicker]="efectiveDate" required formControlName="efectiveDate" />
+                            <mat-datepicker-toggle matSuffix [for]="efectiveDate"> </mat-datepicker-toggle>
+                            <mat-datepicker #efectiveDate></mat-datepicker>
+
+                            <!-- Required Date Messages -->
+                            <mat-error
+                                *ngIf="form.controls.efectiveDate.errors?.required && form.controls.efectiveDate.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <mat-form-field class="general-input" style="width: 80%;">
+                            <mat-label> {{ 'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}
+                            </mat-label>
+                            <input matInput type="number" formControlName="worth"
+                                placeholder="{{ 'FUEL_SUPPLIES.FUEL_PRICE.WORTH' | translate }}" required>
+                            <mat-error *ngIf="form.controls.worth.errors?.required && form.controls.worth.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-8 col-md-8 col-lg-8 col-xl-8">
+                        <mat-form-field class="general-input" style="width: 80%;">
+                            <mat-label> {{ 'FUEL_SUPPLIES.FUEL_PRICE.DOCUMENT' | translate }}
+                            </mat-label>
+                            <input matInput id="uploadFile" value={{file.name}} disabled />
+                        </mat-form-field>
+                        <div class="fileUpload btn ">
+                            <mat-icon>note_add</mat-icon>
+                            <input id="uploadBtn" type="file" class="upload" (change)="onFileSelect($event)"
+                                accept="application/pdf" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-dialog-content>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button class="tsp-button-success" (click)="save()" [disabled]="form.invalid">
+                    <mat-icon class="icons">save</mat-icon>{{ 'VEHICLES.BUTTONS.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="primary" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'VEHICLES.BUTTONS.CLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+
+</div>

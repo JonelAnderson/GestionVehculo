@@ -1,0 +1,186 @@
+<div class="container">
+    <form [formGroup]="" (ngSubmit)="saveEditContract()">
+        <div class="tsp-title-header-modal row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+                <h1 class="tsp-title  tsp-title-modals">{{'MOBILITY_REQUEST.RECORD.EDITFUEL.TITLE' |
+                    translate}}</h1>
+            </div>
+        </div>
+        <div mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{ 'CONTRACT.GENERAL_DATA' | translate }}:
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{'CONTRACT.CONTRACT_NUMBER' | translate}}</mat-label>
+                            <input matInput placeholder="{{ 'CONTRACT.CONTRACT_NUMBER' | translate }}"
+                                formControlName="contractNumber" maxlength="100" type="number"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="contractForm.controls.contractNumber.errors?.required && contractForm.controls.contractNumber.touched">
+                                {{ 'CONTRACT.ERROS.REQUIRED' | translate }}</mat-error>
+                            <mat-error
+                                *ngIf="contractForm.controls.contractNumber.errors?.pattern && contractForm.controls.contractNumber.touched">
+                                {{ 'CONTRACT.ERRORS.MIN_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label>{{'CONTRACT.BEGINNING' | translate}}</mat-label>
+                            <input matInput [matDatepicker]="picker1" [formControl]="">
+                            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                            <mat-datepicker #picker1></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label>{{'CONTRACT.EXPIRATION' | translate}}</mat-label>
+                            <input matInput [matDatepicker]="picker2" [formControl]="">
+                            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+                            <mat-datepicker #picker2></mat-datepicker>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label>CONCEPTO:</mat-label>
+                            <mat-select [formControl]="" [errorStateMatcher]="">
+                                <mat-option>Clear</mat-option>
+                                <mat-option value="valid">Valid option</mat-option>
+                                <mat-option value="invalid">Invalid option</mat-option>
+                            </mat-select>
+                            <mat-hint>Errors appear instantly!</mat-hint>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class=" row">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <p-table>
+                            <ng-template pTemplate="header" class="general-input">
+                                <tr>
+                                    <th>{{'CONTRACT.ITEM'| translate}}</th>
+                                    <th>{{'CONTRACT.CONCEPT' | translate}}</th>
+                                    <th>{{'CONTRACT.AREA'| translate}}</th>
+                                    <th>{{'CONTRACT.QUANTITY'| translate}}</th>
+                                    <th>{{'CONTRACT.PU'| translate}}</th>
+                                    <th>{{'CONTRACT.AMOUNT'| translate}}</th>
+                                    <th>{{'CONTRACT.OPTIONS' | translate}}</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2001 | Gasolina 97</td>
+                                    <td><input type="number" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td>
+                                        <button mat-raised-button color="warn" class="bottonEdit">
+                                            <mat-icon>close</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2001 | Gasolina 97</td>
+                                    <td><input type="number" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td><input type="text" class="inputButton"></td>
+                                    <td>
+                                        <button mat-raised-button color="warn" class="bottonEdit">
+                                            <mat-icon>close</mat-icon>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            <ng-template>
+                                <tr>
+                                    ---
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+
+                <div class=" inputseccion row">
+                    <hr class="ks-line">
+                    <div class="col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{'CONTRACT.CONTRACTOR_DATA'| translate}}:
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{'CONTRACT.RUC'| translate}}</mat-label>
+                            <input type="text" matInput placeholder="{{'CONTRACT.RUC' |translate}}" maxlength="11"
+                                required formControlName="ruc"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="contractForm.controls.ruc.errors?.pattern && contractForm.controls.ruc.touched">
+                                {{ 'CONTRACT.ERRORS.MIN_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-label>{{'CONTRACT.BUSINESS_NAME' |translate}}:</mat-label>
+                        <br />
+                        <p>Tech Solutions Perú S.A.C</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{'CONTRACT.DIRECTION' | translate}}</mat-label>
+                            <input type="text" matInput placeholder="{{'CONTRACT.DIRECTION'| translate}}" maxlength="50"
+                                required formControlName="direction"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="contractForm.controls.direction.errors?.pattern && contractForm.controls.direction.touched">
+                                {{ 'CONTRACT.ERRORS.MIN_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{'CONTRACT.MAIL' | translate}}</mat-label>
+                            <input type="email" matInput [formControl]="" placeholder="{{'CONTRACT.MAIL'|translate}}"
+                                maxlength="50" required formControlName="mail"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="contractForm.controls.mail.errors?.pattern && contractForm.controls.mail.touched">
+                                {{ 'CONTRACT.ERRORS.MIN_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="inputGeneral">
+                            <mat-label>{{'CONTRACT.PHONE' | translate}}</mat-label>
+                            <input type="tel" matInput placeholder="{{'CONTRACT.PHONE' | translate}}" maxlength="9"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="contractForm.controls.phone.errors?.pattern && contractForm.controls.phone.touched">
+                                {{ 'CONTRACT.ERRORS.MIN_CARACTERS' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="buttons-container">
+                <button mat-raised-button color="primary" class="button-save" (click)="confirmationSave()">
+                    <mat-icon class="icons">save</mat-icon>{{ 'CONTRACT.SAVE' | translate }}
+                </button>
+                <button mat-raised-button color="warn" class="marging-buttons button-close" mat-dialog-close>
+                    <mat-icon class="icons">close</mat-icon>{{ 'CONTRACT.TOCLOSE' | translate }}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

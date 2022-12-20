@@ -1,0 +1,114 @@
+<div class="container">
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 SectionTitleModal">
+            <div class="titleNameModal">
+                <!-- <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"> -->
+                <span class="tsp-title-modals">{{'FUEL_SUPPLIES.TITLES.SHOW_DETAIL'| translate}} | </span>
+                <!-- </div>
+                <div class="col-10 col-sm-10 col-md-3 col-lg-3 col-xl-3"> -->
+                <span>EGJ-100</span>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Content of ShowFuelSupplies -->
+    <div mat-dialog-content class="container">
+        <!-- Section Validation -->
+        <div class="Section">
+            <div class="DataValidation">
+                <div class="titleSection">
+                    <mat-label>{{'FUEL_SUPPLIES.DATA.CONTROL_PROGRESS'| translate}}</mat-label>
+                    <hr class="ks-line" />
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="col-12 col-sm-4 col-md-6 col-lg-4 col-xl-3 title">
+                            <mat-label>{{'FUEL_SUPPLIES.DATA.INTERVAL'| translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-4 col-md-6 col-lg-4 col-xl-3 data">
+                            <mat-label> AIU-586</mat-label>
+                            <mat-label> AIU-586</mat-label>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3 title">
+                            <mat-label>{{'FUEL_SUPPLIES.DATA.FUEL'| translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3 data">
+                            <mat-label>GASOHOL 97</mat-label>
+                        </div>
+                    </div>
+                    <!-- Suppliying -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3 title">
+                            <mat-label>{{'FUEL_SUPPLIES.DATA.SUPPLIYING'| translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-3 col-md-6 col-lg-4 col-xl-3 data">
+                            <mat-label>3</mat-label>
+                        </div>
+                    </div>
+                    <!-- TAble Detail Consumption -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-12 col-xl-12 title">
+                            <mat-label>{{'FUEL_SUPPLIES.DATA.DETAIL_CONSUPTION'| translate}}</mat-label>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="SectionTable row">
+                                <div class="contentTable col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                                    <p-table [value]="fuelSuplies">
+                                        <ng-template pTemplate="header">
+                                            <tr>
+                                                <th>{{'FUEL_SUPPLIES.DATA.DATE_SUPPLIYING'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.USER_AREA'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.DRIVER'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.KM_INITIAL'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.KM_FINAL'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.TRAIL'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.CONSUMPTION_GALLON'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.ESTABLISHED_RANGE'| translate}}</th>
+                                                <th>{{'FUEL_SUPPLIES.DATA.PERCEIVED_RANGE'| translate}}</th>
+                                            </tr>
+                                        </ng-template>
+                                        <ng-template pTemplate="body" let-FuelSuplies let-rowIndex="rowIndex">
+                                            <tr>
+                                                <td>{{FuelSuplies.DateSupply}}</td>
+                                                <td>{{FuelSuplies.UserArea}}</td>
+                                                <td>{{FuelSuplies.Driver}}</td>
+                                                <td>{{FuelSuplies.KMInitial}}</td>
+                                                <td>{{FuelSuplies.KMFinal}}</td>
+                                                <td>{{FuelSuplies.Trail}}</td>
+                                                <td>{{FuelSuplies.ConsumedGallon}}</td>
+                                                <td>{{FuelSuplies.RangeEstablish}}</td>
+                                                <td style="color: white;"
+                                                    [ngClass]="{'colorSuccess': FuelSuplies.RangePerceived>=FuelSuplies.RangeEstablish,'colorWarn': FuelSuplies.RangePerceived<FuelSuplies.RangeEstablish}">
+                                                    {{FuelSuplies.RangePerceived}}</td>
+                                            </tr>
+                                            <tr *ngIf="rowIndex+1==fuelSuplies.length">
+                                                <td colspan="6"></td>
+                                                <td colspan="2">{{'FUEL_SUPPLIES.DATA.PERCEIVED_RANGE_INTERVAL'|
+                                                    translate}}</td>
+                                                <td style="color: white;"
+                                                    [ngClass]="{'colorSuccess':RangePerceivedToInterval>=ColorRangePerceivedToInterval,'colorWarn':RangePerceivedToInterval<ColorRangePerceivedToInterval}">
+                                                    {{RangePerceivedToInterval}}</td>
+                                            </tr>
+                                        </ng-template>
+                                    </p-table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="CloseModal">
+        <button mat-flat-button mat-button mat-dialog-close color="warn">
+            <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+        </button>
+    </div>
+</div>

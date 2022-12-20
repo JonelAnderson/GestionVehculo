@@ -1,0 +1,248 @@
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.mat-dialog-content {
+    // width: 880px;
+    // height: 520px;
+    margin: 0;
+    word-wrap: break-word;
+    max-height: 360px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding: 0px;
+    max-width: 906px;
+}
+
+.tsp-title-modals {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-title {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.325rem;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.tsp-subTitle {
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.titleModal {
+    background-color: $tspSigesBlue;
+    color: $tspSigesWhite;
+    margin-left: -16px;
+    margin-right: -16px;
+    padding-left: 44px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    @extend .tsp-title-modals;
+
+    .titleNameModal {
+        display: flex;
+        justify-content: center;
+    }
+
+    .state {
+        border: 1px solid;
+        text-align: center;
+        justify-content: center;
+        background: $tspSigesMagenta;
+        color: $tspSigesBlack;
+        // padding-right: 18px;
+        // padding-left: 18px;
+        border-radius: 5px;
+        margin: 5px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-weight: bold;
+        border-color: $tspSigesMagenta;
+    }
+}
+
+.leftSectionTitleModal {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.optionModal {
+    display: flex;
+    justify-content: end;
+}
+
+
+.contentAtribute {
+    margin-bottom: 11px;
+
+    // padding-left: 20px;
+    .title {
+        font-weight: bold;
+        color: $tspSigesBlack;
+        @extend .tsp-subTitle;
+    }
+}
+
+.Section {
+    // border-radius: 3px;
+    margin-top: 10px;
+    margin-left: 4px;
+    // box-shadow: 0px 1px 4px $tspSigesBlack;
+    // border-top: 3px solid;
+    // border-color: $tspSigesBlue;
+    // margin-bottom: 14px;
+}
+
+.mat-divider {
+    border-top-width: 2px;
+    margin-left: -11px;
+    margin-right: -10px;
+    border-top-style: solid;
+    border-top-color: $tspSigesBlue;
+}
+
+.title {
+    color: $tspSigesBlue;
+    font-weight: bold;
+    @extend .tsp-title;
+}
+
+.mat-raised-button {
+    padding: 0 2px 0px 2px;
+    min-width: 0;
+    width: 40px;
+    margin-left: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+}
+
+.flex {
+    display: flex;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                cursor: pointer;
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px
+}
+
+.optionsModalResponsive {
+    display: none;
+    align-items: center;
+}
+
+@media (max-width: 884px) and (min-width: 0px) {
+    .title {
+        text-align: center;
+    }
+
+    .contentAtribute {
+        text-align: center;
+    }
+
+    .optionsModal {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+}
+
+@media (max-width: 664px) {
+
+    .optionModal {
+        display: none;
+    }
+
+    .optionsModalResponsive {
+        display: flex;
+        justify-content: end;
+    }
+
+    .mat-dialog-content {
+        max-height: 360px;
+    }
+
+}
+
+.seccion-container {
+    margin: 10px;
+}
+
+.FileUploaded {
+    .attachmentsFile {
+        .contentAttachment {
+            display: flex;
+            flex-wrap: wrap;
+
+            .contentAttachmentFile {
+                cursor: pointer;
+                display: flex;
+
+                .iconFile {
+                    .material-icons {
+                        font-size: 40px;
+                        color: $colorDanger;
+                    }
+                }
+
+                .nameFile {
+                    margin-left: 18px;
+                    margin-top: 6px;
+                }
+            }
+        }
+    }
+}
+
+.CloseModal {
+    display: flex;
+    justify-content: end;
+    margin-top: 14px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: 20px;
+}

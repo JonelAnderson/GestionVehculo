@@ -1,0 +1,165 @@
+<!-- AAAAAAAAAAAAAAAAAa -->
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <div>
+                <mat-label
+                    class="tsp-title tsp-view-title tsp-title-modals">{{'MOBILITY_REQUEST.RECORD.TITLE'|translate}}</mat-label>
+            </div>
+        </div>
+    </div>
+    <form action="">
+        <div mat-dialog-content class="container">
+            <div class="Section">
+                <hr class="ks-line">
+                <div class="DataVehicle">
+                    <div class="title">
+                        <mat-label>{{'MOBILITY_REQUEST.RECORD.INSURED_VEHICLE_DATA' | translate}}:</mat-label>
+                    </div>
+                </div>
+                <div class="container row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div>
+                            <mat-form-field class="searchPlate">
+                                <mat-label class="title">{{'VEHICLE_INSPECTIONS.DATA.LICENSE_PLATE'|
+                                    translate}}
+                                </mat-label>
+                                <input matInput type="text" formControlName="licencePlate" maxlength="6">
+
+                                <!-- Messages Error using Validation-->
+                                <mat-error *ngIf=" historialForm.controls.licencePlate.errors?.required">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                            <button mat-flat-button color="primary" class="btnSearch">
+                                <mat-icon>search</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- AREA -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.AREA'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>MINISTRA</span>
+                        </div>
+                    </div>
+                    <!-- RESPONSIBLE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.RESPONSIBLE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>JARA ROJAS MANUEL</span>
+                        </div>
+                    </div>
+                    <!-- TYPE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.TYPE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>CAMIONETA</span>
+                        </div>
+                    </div>
+                    <!-- BRAND -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.BRAND'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>DAEEGOO</span>
+                        </div>
+                    </div>
+                    <!-- MODEL -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.MODEL'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>TICO SL</span>
+                        </div>
+                    </div>
+                    <!-- COLOR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.MODEL'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- YEAR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.COLOR'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>ROJO</span>
+                        </div>
+                    </div>
+                    <!-- N° ENGINE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.YEAR'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>2022</span>
+                        </div>
+                    </div>
+                    <!-- N° SERIE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.SERIE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>73B3YYQN83 | 2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line">
+            <div class="Section">
+                <div class="ContractorData">
+                    <div class="title">
+                        <mat-label>{{'MOBILITY_REQUEST.RECORD.HISTORY_OF_INSURED_VEHICLE'| translate}}:
+                        </mat-label>
+                    </div>
+                    <div class="container row table">
+                        <p-table [value]="">
+                            <ng-template pTemplate="header">
+                                <tr>
+                                    <th>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.POLICY_NUMBER'| translate}}</th>
+                                    <th>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.BUSINESS'| translate}}</th>
+                                    <th>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.INITIAL_DATE'| translate}}</th>
+                                    <th>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.FINAL_DATE'| translate}}</th>
+                                    <th>{{'MOBILITY_REQUEST.RECORD.VEHICLE_HISTORY.STATE'| translate}}</th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-vehicleInspection let-rowIndex="rowIndex">
+                                <tr>
+                                    <td>{{vehicleInspection.nCertified}}</td>
+                                    <td>{{vehicleInspection.supplier}}</td>
+                                    <td>{{vehicleInspection.reviewDate}}</td>
+                                    <td>{{vehicleInspection.expirationDate}}</td>
+                                    <td
+                                        [ngClass]="{'statusRed': vehicleInspection.state==false,'statusSuccess' : vehicleInspection.state==true}">
+                                        <span *ngIf="vehicleInspection.state==false">CADUCADO</span>
+                                        <span *ngIf="vehicleInspection.state==true">VALIDO</span>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

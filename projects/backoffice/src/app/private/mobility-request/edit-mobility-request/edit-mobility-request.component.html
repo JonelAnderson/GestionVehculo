@@ -1,0 +1,407 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12r">
+            <mat-label class="tsp-title tsp-view-title tsp-title-modals">{{ 'MOBILITY_REQUEST.EDIT.TITLE' | translate }}
+                |
+                0010 - 2022</mat-label>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <mat-dialog-content>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'MOBILITY_REQUEST.LABELS.INSURED_VEHICLE'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="search-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.LICENSE_PLATE'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="licensePlate" maxlength="6" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.licensePlate.errors?.required && form.controls.licensePlate.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                        <button class="button-actions" (click)="searchVehicle()">
+                            <mat-icon class="tsp-icons">search</mat-icon>
+                        </button>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.AREA' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.RESPONSIBLE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.TYPE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.MARK' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.MODEL' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.COLOR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.YEAR' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.N_ENGINE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <span class="tsp-font-size-default-content  tsp-labels"> {{
+                            'MOBILITY_REQUEST.LABELS.SERIE' |
+                            translate
+                            }}</span><br>
+                        <span class="tsp-font-size-default-content ">
+                            Data
+                        </span>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'MOBILITY_REQUEST.LABELS.SERVICE_DATA'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="search-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.SERVICE_NUMBER'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="serviceNumber" maxlength="17" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.serviceNumber.errors?.pattern && form.controls.serviceNumber.touched">
+                                {{ 'MOBILITY_REQUEST.ERRORS.NUMBER_YEAR' | translate }}</mat-error>
+                            <mat-error
+                                *ngIf="form.controls.serviceNumber.errors?.required && form.controls.serviceNumber.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.USER_AREA'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="userArea" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.userArea.errors?.required && form.controls.userArea.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.COMMISSIONARY_STAFF'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="commissionaryStaff" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.commissionaryStaff.errors?.required && form.controls.commissionaryStaff.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'MOBILITY_REQUEST.LABELS.DATE_SERVICE' | translate }} </mat-label>
+                            <input matInput [matDatepicker]="dateService" required formControlName="dateService" />
+                            <mat-datepicker-toggle matSuffix [for]="dateService"> </mat-datepicker-toggle>
+                            <mat-datepicker #dateService></mat-datepicker>
+
+                            <!-- Required Date Messages -->
+                            <mat-error
+                                *ngIf="form.controls.dateService.errors?.required && form.controls.dateService.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED'
+                                | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'MOBILITY_REQUEST.LABELS.HOUR_SERVICE' | translate }} </mat-label>
+                            <input matInput type="time" class="inputDate" formControlName="hourService" required />
+
+                            <!-- Required Date Messages -->
+                            <mat-error
+                                *ngIf="form.controls.hourService.errors?.required && form.controls.hourService.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED'
+                                | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.COMMISSION_GOAL'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="commissionGoal" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.commissionGoal.errors?.required && form.controls.commissionGoal.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.ASSIGNED_DRIVER'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="assignedDriver" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.assignedDriver.errors?.required && form.controls.assignedDriver.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'MOBILITY_REQUEST.LABELS.DEPARTURE_TIME' | translate }} </mat-label>
+                            <input matInput type="time" class="inputDate" formControlName="departureTime" required />
+
+                            <!-- Required Date Messages -->
+                            <mat-error
+                                *ngIf="form.controls.departureTime.errors?.required && form.controls.departureTime.touched">
+                                {{
+                                'GENERAL.ERRORS.REQUIRED'
+                                | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.DEPARTURE_KM'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="departureKM" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.departureKM.errors?.required && form.controls.departureKM.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input" appearance="fill">
+                            <mat-label> {{ 'MOBILITY_REQUEST.LABELS.ARRIVAL_TIME' | translate }} </mat-label>
+                            <input matInput type="time" class="inputDate" formControlName="arrivalTime" required />
+
+                            <!-- Required Date Messages -->
+                            <mat-error
+                                *ngIf="form.controls.arrivalTime.errors?.required && form.controls.arrivalTime.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED'
+                                | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.ARRIVAL_KM'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="arrivalKM" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.arrivalKM.errors?.required && form.controls.arrivalKM.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'MOBILITY_REQUEST.LABELS.DESTINATION_DATA'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.ENTITY'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="entity" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf=" form.controls.entity.errors?.required && form.controls.entity.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-6 col-lg-6 col-xl-6">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.DISTRICT'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="district" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.district.errors?.required && form.controls.district.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.ADDRESS'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="address" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf=" form.controls.address.errors?.required && form.controls.address.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <mat-form-field class="general-input">
+                            <mat-label class="title">{{'MOBILITY_REQUEST.LABELS.OBSERVATION'|
+                                translate}}
+                            </mat-label>
+                            <input matInput type="text" formControlName="observation" maxlength="50" required
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf=" form.controls.observation.errors?.required && form.controls.observation.touched">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title ">
+                            <span class="tsp-font-size-default-title  tsp-font-size-default">
+                                {{'MOBILITY_REQUEST.LABELS.ATTACHED_DOCUMENT'| translate}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ContentFileUploaded row">
+                    <div class="attachmentsFile col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" *ngIf="files!=[]">
+                        <div class="contentAttachment">
+                            <div class="contentAttachmentFile">
+                                <div *ngIf="file.type=='application/pdf'" class="iconFile">
+                                    <mat-icon>picture_as_pdf</mat-icon>
+                                </div>
+                                <div class="nameFile">
+                                    <div>{{file.name}}</div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="file" id="fileUpload" (change)="fileUploaded($event)">
+                    </div>
+                    <div class="btnChangeAndRemove col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row">
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnChange">
+                            <button mat-flat-button color="primary" (click)="btn_upload()">
+                                <mat-icon>autorenew</mat-icon>{{'GENERAL.BUTTONS.CHANGE'| translate}}
+                            </button>
+                        </div>
+                        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnRemove">
+                            <button mat-flat-button color="warn" (click)="btn_remove()">
+                                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.REMOVE'| translate}}
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </mat-dialog-content>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+                <button type="submit" [disabled]="form.invalid" mat-flat-button mat-button color="primary">
+                    <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+                </button>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

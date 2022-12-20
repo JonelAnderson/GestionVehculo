@@ -1,0 +1,79 @@
+@import 'variables';
+
+.tsp-labels {
+    font-weight: 600;
+}
+
+.tsp-container {
+    width: 100%;
+    margin-right: 5%;
+}
+
+.action-buttons {
+    margin-left: 10px;
+}
+
+.tsp-view-title {
+    color: $tspSigesWhiteLetters;
+    margin-left: 10px;
+}
+
+.seccion-container {
+    margin: 10px;
+}
+
+.soat-status-deprecated {
+    color: $tspSigesWhiteLetters;
+    background-color: $tspSigesError;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.tsp-soat-status-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.soat-status-valid {
+    color: $tspSigesWhiteLetters;
+    background-color: $tspSigesSuccess;
+    padding: 5px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.button-close {
+    background-color: $tspSigesError;
+    color: $tspSigesWhite;
+}
+
+.button-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+
+.buttons-header-container {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 10px;
+}
+
+::ng-deep .mat-dialog-container {
+    padding-top: 0px;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+::ng-deep .cdk-overlay-pane {
+    margin-left: 14%;
+}
+
+::ng-deep .mat-dialog-container {
+    overflow: hidden !important;
+}

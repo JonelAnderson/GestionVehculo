@@ -1,0 +1,134 @@
+<!-- CABECERA DE LISTAR SOAT
+<div class="list-background">
+  <div class="row">
+    <div class="view-title-container">
+      <h1 class="tsp-title tsp-view-title tsp-title-modals">{{ 'PIP.TITLE' | translate }}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+      <div class="filter-container">
+        <label class="title-filter">{{'PIP.LIST.DATES' | translate}}</label><br>
+        <div class="col inputfechas">
+          <mat-form-field class="dateSelectContainer">
+            <mat-label>{{ 'PIP.LIST.INITIAL_DATE' | translate }}</mat-label>
+            <input matInput [matDatepicker]="from" />
+            <mat-datepicker-toggle matSuffix [for]="from"> </mat-datepicker-toggle>
+            <mat-datepicker #from></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="dateSelectContainerfecha">
+            <mat-label>{{ 'PIP.LIST.FINAL_DATE' | translate }}</mat-label>
+            <input matInput [matDatepicker]="until" />
+            <mat-datepicker-toggle matSuffix [for]="until"> </mat-datepicker-toggle>
+            <mat-datepicker #until></mat-datepicker>
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+      <cad-multi-check-box-filter [items]=" stateSoats" [GroupName]="'Estado'">
+      </cad-multi-check-box-filter>
+    </div>
+    <div class="col-12 col-md-4 col-lg-4 col-xl-4">
+      <button mat-raised-button color="primary" class="btnsoats" (click)="openRegister()" id="goToCreate"><i
+          class="mdi mdi-plus buttonIcon_right"></i>{{'PIP.NEW'|
+        translate}}</button>
+      <button mat-raised-button color="primary" class="btnrecord" (click)="openHistrial()" id="goToCreate">
+        <mat-icon>history</mat-icon>{{'PIP.LIST.RECORD' | translate}}
+      </button>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+      <cad-chips-input [items]="areasAseguradora" [InputLabel]="'Áreas'"
+        [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate">
+      </cad-chips-input>
+    </div>
+    <div class="col-12 col-md-6 col-lg-6 col-xl-6">
+      <cad-chips-input [items]="areasAseguradora" [InputLabel]="'Aseguradoras:'"
+        [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+    </div>
+  </div>
+  <div class="row mt-4">
+    <hr class="ks-line">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openDialog()"
+      id="goToCreate" (editEvent)="editEvent($event)" (deleteEvent)="deleteEvent($event)"></cad-table-filter>
+  </div>
+</div> -->
+
+<div class="row">
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 tsp-view-title-container">
+    <h1 class="tsp-title tsp-view-title nameView">{{ 'PIP.TITLE' | translate }}</h1>
+  </div>
+  <div class="filter">
+    <div class="row">
+      <!-- filter Date -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 date">
+        <div class="dateContent row">
+          <span class="title">Fecha</span>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateStart">
+            <mat-form-field appearance="fill" class="generalMatForm">
+              <mat-label>Date Start</mat-label>
+              <input matInput [matDatepicker]="picker1">
+              <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6 dateEnd">
+            <mat-form-field appearance="fill" class="generalMatForm">
+              <mat-label>Date End</mat-label>
+              <input matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <!-- filter Area -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 filterArea">
+        <cad-chips-input [items]="areasAseguradora" [InputLabel]="'Áreas'"
+          [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate">
+        </cad-chips-input>
+      </div>
+      <!-- filter Insured -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 filterInsured">
+        <cad-chips-input [items]="areasAseguradora" [InputLabel]="'Aseguradoras:'"
+          [InputCheckLabel]="'VEHICLES.SHOW.LABELS.ALL' | translate"></cad-chips-input>
+      </div>
+      <!-- filter State -->
+      <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 filterState">
+        <cad-multi-check-box-filter [items]=" stateSoats" [GroupName]="'Estado'">
+        </cad-multi-check-box-filter>
+      </div>
+      <!-- button Search -->
+      <div class="col-12 col-sm-2 md-1 col-lg-1 col-xl-1 btnSearch">
+        <div>
+          <button mat-raised-button color="primary"><mat-icon>search</mat-icon></button>
+        </div>
+      </div>
+
+      <!-- button new and histoy -->
+      <div class="col-12 col-sm-6 md-7 col-lg-7 col-xl-7 btnNewAndHistory row">
+        <div class="col-12 col-sm-12 col-md-2 col-lg-2 col-xl-4 contentBTNs">
+          <div class="btnNew">
+            <button mat-raised-button color="primary" (click)="openRegister()"
+              id="goToCreate"><mat-icon>add</mat-icon>{{'PIP.NEW'|
+              translate}}</button>
+          </div>
+          <div class="btnHistory">
+            <button mat-raised-button color="primary" (click)="openHistrial()">
+              <mat-icon>history</mat-icon>{{'PIP.LIST.RECORD' | translate}}
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <!-- Table of SOATs -->
+  <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 listPIP">
+    <cad-table-filter [items]="data" [columns]="columns" [actions]="actions" (searchEvent)="openDialog()"
+      id="goToCreate" (editEvent)="editEvent($event)" (deleteEvent)="deleteEvent($event)"></cad-table-filter>
+  </div>
+</div>

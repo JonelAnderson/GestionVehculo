@@ -1,0 +1,342 @@
+<div class="container">
+    <!-- Title Modal -->
+    <div class="titleModal row">
+        <!-- IZQUIERDA -->
+        <div class="col-10 col-sm-10 col-md-8 col-lg-8 col-xl-6 leftSectionTitleModal ">
+            <div class="titleNameModal row">
+                <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                    <span class="tsp-title-modals">SOL MOV</span>&nbsp;
+                </div>
+                <div class="col-12 col-sm-12 col-md-7 col-lg-9 col-xl-9">
+                    <span>0010-2022</span>&nbsp;
+                </div>
+            </div>
+
+        </div>
+        <!-- DERECHA -->
+        <div class="col-2 col-sm-2 col-md-4 col-lg-4 col-xl-6 optionsModal">
+            <div class="optionModal">
+                <div class="btnEdit">
+                    <button mat-raised-button color="primary" mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>
+                    </button>
+                </div>
+                <div class="btnRemove">
+                    <button mat-raised-button color="warn" mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </div>
+            </div>
+            <div class="optionsModalResponsive">
+                <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item mat-dialog-close (click)="openEdit()">
+                        <mat-icon>edit</mat-icon>{{'GENERAL.BUTTONS.EDIT'| translate}}
+                    </button>
+                    <button mat-menu-item mat-dialog-close (click)="openUnsuscribe()">
+                        <mat-icon>delete</mat-icon>{{'FUEL_SUPPLIES.UNSUSCRIBE.BTN'| translate}}
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+    </div>
+    <!-- Content of ShowHistoryVehicleInspections -->
+    <div mat-dialog-content class="container">
+        <!-- Section Vehicle -->
+        <div class="Section">
+            <hr class="ks-line" />
+            <div class="DataVehicle">
+                <div class="title">
+                    <span>{{'MOBILITY_REQUEST.LABELS.VEHICLE_DATA'| translate}}</span>
+                </div>
+                <div class="container row">
+                    <!-- PLATE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.LICENSE_PLATE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-056</span>
+                        </div>
+                    </div>
+                    <!-- AREA -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.AREA'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- RESPONSIBLE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.RESPONSIBLE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- TYPE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.TYPE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- BRAND -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.BRAND'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- MODEL -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.MODEL'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- COLOR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.COLOR'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- YEAR -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.YEAR'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- N° ENGINE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.N_ENGINE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+                    <!-- N° SERIE -->
+                    <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.SERIE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>AIU-586</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section Service -->
+        <div class="Section">
+            <div class="ServiceData">
+                <div class="title">
+                    <span>{{'MOBILITY_REQUEST.LABELS.SERVICE_DATE'| translate}}</span>
+                </div>
+                <div class="container row">
+                    <!-- N° -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.N'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+                    <!-- User Area -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.USER_AREA'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+                    <!-- Commission staff -->
+                    <div class="col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.COMMISSION_OBJETIVE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>LIDIA ENCISO CONDORCUYA</span>
+                        </div>
+                    </div>
+                    <!-- Date Service -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.DATE_SERVICE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>08/12/2022</span>
+                        </div>
+                    </div>
+                    <!-- Time Service -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-8 col-xl-8 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.TIME_SERVICE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>18:00</span>
+                        </div>
+                    </div>
+                    <!-- Commission objetive -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.COMMISSION_OBJETIVE'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>RECOGER EQUIPO DE COMPUTO</span>
+                        </div>
+                    </div>
+                    <!-- Assigned driver -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.ASSIGNED_DRIVER'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>CURI RIOS FERNANDO</span>
+                        </div>
+                    </div>
+                    <!-- Departure Time -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.DEPARTURE_TIME'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>17:30</span>
+                        </div>
+                    </div>
+                    <!-- KM out -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.KM_OUT'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>15050</span>
+                        </div>
+                    </div>
+                    <!-- Time arrival -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.TIME_ARRIVAL'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>18:45</span>
+                        </div>
+                    </div>
+                    <!-- KM arrival -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.KM_ARRIVAL'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>15075</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <hr class="ks-line" />
+
+        <!-- Section DESTINATION -->
+        <div class="Section">
+            <div class="DestinationData">
+                <div class="title">
+                    <span>{{'MOBILITY_REQUEST.LABELS.DESTINATION_DATA'| translate}}</span>
+                </div>
+                <div class="container row">
+                    <!-- Entity -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.ENTITY'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+                    <!-- Distric -->
+                    <div class="col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.DISTRIC'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.ADDRESS'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+                    <!-- Observations -->
+                    <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 contentAtribute">
+                        <div class="title">
+                            <mat-label>{{'MOBILITY_REQUEST.LABELS.OBSERVATION'| translate}}</mat-label>
+                        </div>
+                        <div>
+                            <span>0010-2022</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr class="ks-line" />
+        <!-- Section File Uploaded -->
+        <div class="Section">
+            <div class="FileUploaded">
+                <div class="title">
+                    <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' | translate}}</span>
+                </div>
+                <div class="container attachmentsFile">
+                    <div class="contentAttachment">
+                        <div class="contentAttachmentFile">
+                            <div class="iconFile">
+                                <mat-icon>picture_as_pdf</mat-icon>
+                            </div>
+                            <div>
+                                <div class="nameFile">SOAT.PDF</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 CloseModal">
+            <button mat-flat-button mat-button mat-dialog-close color="warn">
+                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

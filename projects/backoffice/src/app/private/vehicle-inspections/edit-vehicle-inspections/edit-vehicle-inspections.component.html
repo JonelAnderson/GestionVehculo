@@ -1,0 +1,270 @@
+<div class="container">
+    <form [formGroup]="vehicleForm" (ngSubmit)="editVehicle()">
+        <!-- Title Modal -->
+        <div class="titleModal row">
+            <div class="col-12 col-sm-12 col-md-3 col-lg-3 col-xl-3 titleNameModal">
+                <div>
+                    <span class="tsp-title-modals">{{'VEHICLE_INSPECTIONS.TITLES.EDIT' | translate}}</span>&nbsp;
+                </div>
+                <div>
+                    <span> AIU-056</span>&nbsp;
+                </div>
+            </div>
+            <div class="col-12 col-sm-12 col-md-4 col-lg-3 col-xl-3">
+                <div class="state">
+                    <span>CADUCADO</span>&nbsp;
+                </div>
+            </div>
+        </div>
+        <div mat-dialog-content class="container">
+            <!-- Section Vehicle -->
+            <div class="Section">
+                <hr class="ks-line" />
+                <div class="DataVehicle">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.INSURED_VEHICLE'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- PLATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div>
+                                <mat-form-field class="searchPlate">
+                                    <mat-label class="title">{{'PIP.DATA.LICENSE_PLATE'|
+                                        translate}}
+                                    </mat-label>
+                                    <input matInput type="text" formControlName="licencePlate" maxlength="6">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" vehicleForm.controls.licencePlate.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                                <button mat-flat-button color="primary" class="btnSearch">
+                                    <mat-icon>search</mat-icon>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- AREA -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.AREA'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- RESPONSIBLE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.RESPONSIBLE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- TYPE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.TYPE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- BRAND -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.BRAND'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- MODEL -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.MODEL'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- COLOR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.COLOR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- YEAR -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.YEAR'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- N° ENGINE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.N_ENGINE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                        <!-- N° SERIE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 contentAtribute">
+                            <div class="title">
+                                <mat-label>{{'PIP.DATA.SERIE'| translate}}</mat-label>
+                            </div>
+                            <div>
+                                <span>AIU-586</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section Certified -->
+            <div class="Section">
+                <div class="DataCertified">
+                    <div class="title">
+                        <span>{{'VEHICLE_INSPECTIONS.DATA.CERTIFICATE_DETAILS'| translate}}</span>
+                    </div>
+                    <div class="container row">
+                        <!-- N° -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <div>
+                                <mat-form-field appearance="fill" class="generalMatForm">
+                                    <mat-label>{{ 'VEHICLE_INSPECTIONS.LABELS.N_' | translate }}
+                                    </mat-label>
+                                    <input matInput
+                                        placeholder="{{ 'VEHICLE_INSPECTIONS.PLACEHOLDERS.N_' | translate }}"
+                                        type="text" formControlName="numberCertified">
+
+                                    <!-- Messages Error using Validation-->
+                                    <mat-error *ngIf=" vehicleForm.controls.numberCertified.errors?.required">
+                                        {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+                        <!-- ENTERPRISE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <mat-form-field appearance="fill" class="generalMatForm">
+                                <mat-label>{{ 'VEHICLE_INSPECTIONS.LABELS.ENTERPRISE' | translate }}
+                                </mat-label>
+                                <input matInput
+                                    placeholder="{{ 'VEHICLE_INSPECTIONS.PLACEHOLDERS.ENTERPRISE' | translate }}"
+                                    type="text" formControlName="enterprise">
+
+                                <!-- Messages Error using Validation-->
+                                <mat-error *ngIf=" vehicleForm.controls.enterprise.errors?.required">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- DATE OF ISSUE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <mat-form-field appearance="fill" class="generalMatForm">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.LABELS.REVIEW_DATE' | translate}}</mat-label>
+                                <input matInput [matDatepicker]="reviewDate" [min]="minDate" [max]="maxDate"
+                                    formControlName="reviewDate" startView="multi-year"
+                                    placeholder="{{'VEHICLE_INSPECTIONS.PLACEHOLDERS.REVIEW_DATE' | translate}}"
+                                    (dateChange)="StartDatePoliza()">
+                                <mat-datepicker #reviewDate startView="multi-year"></mat-datepicker>
+                                <mat-datepicker-toggle matSuffix [for]="reviewDate">
+                                </mat-datepicker-toggle>
+                                <!-- Message Error Using Validation -->
+                                <mat-error
+                                    *ngIf="vehicleForm.controls.reviewDate.errors?.required && vehicleForm.controls.reviewDate.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+
+                        <!-- EXPIRATION DATE -->
+                        <div class="col-12 col-sm-6 col-md-6 col-lg-6 col-xl-6 contentAtribute">
+                            <mat-form-field appearance="fill" class="generalMatForm">
+                                <mat-label>{{'VEHICLE_INSPECTIONS.LABELS.EXPIRATION_DATE' | translate}}</mat-label>
+                                <input matInput [matDatepicker]="expiration_Date" [min]="minDate" [max]="maxDate"
+                                    formControlName="expirationDate" startView="multi-year"
+                                    placeholder="{{'VEHICLE_INSPECTIONS.PLACEHOLDERS.EXPIRATION_DATE' | translate}}"
+                                    (dateChange)="EndDatePoliza()">
+                                <mat-datepicker #expiration_Date startView="multi-year"></mat-datepicker>
+                                <mat-datepicker-toggle matSuffix [for]="expiration_Date">
+                                </mat-datepicker-toggle>
+                                <!-- Message Error Using Validation -->
+                                <mat-error
+                                    *ngIf="vehicleForm.controls.expirationDate.errors?.required && vehicleForm.controls.expirationDate.touched">
+                                    {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error>
+                            </mat-form-field>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="ks-line" />
+
+            <!-- Section File Uploaded -->
+            <div class="Section">
+                <div class="FileUploaded">
+                    <div class="title">
+                        <span>{{'PIP.SECTIONS_TITLES.PRINTABLE_DOCUMENT' | translate}}</span>
+                    </div>
+                    <div class="ContentFileUploaded row">
+                        <div class="attachmentsFile col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8" *ngIf="files!=[]">
+                            <div *ngFor="let file of files" class="contentAttachment">
+                                <div class="contentAttachmentFile">
+                                    <div *ngIf="file.type=='application/pdf'" class="iconFile">
+                                        <mat-icon>picture_as_pdf</mat-icon>
+                                    </div>
+                                    <div class="nameFile">
+                                        <div>{{file.name}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <input type="file" id="fileUpload" multiple="multiple" (change)="fileUploaded($event)">
+                        </div>
+                        <div class="btnChangeAndRemove col-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 row">
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnChange">
+                                <button mat-flat-button color="primary" (click)="btn_upload()">
+                                    <mat-icon>autorenew</mat-icon>{{'GENERAL.BUTTONS.CHANGE'| translate}}
+                                </button>
+                            </div>
+                            <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 btnRemove">
+                                <button mat-flat-button color="warn">
+                                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.REMOVE'| translate}}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+                <button mat-flat-button mat-button color="primary" (click)="btnSave()">
+                    <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+                </button>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

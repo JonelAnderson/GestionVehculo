@@ -1,0 +1,296 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 titleNameModal">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'DRIVERS_OPERATORS.TITLES.REGISTER' | translate }}
+            </h1>
+        </div>
+    </div>
+    <form [formGroup]="form" (ngSubmit)="save()">
+        <div mat-dialog-content>
+
+            <div class="row seccion-container">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{ 'DRIVERS_OPERATORS.LABELS.GENERAL_DATE' | translate }}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.DNI' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.NUMBER_DNI' | translate }}"
+                                maxlength="8" required formControlName="indentificationDocument"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.indentificationDocument.errors?.required && form.controls.indentificationDocument.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.PATERNAL_LAST_NAME' | translate }}</mat-label>
+                            <input matInput formControlName="paternalLastName"
+                                placeholder="{{ 'DRIVERS_OPERATORS.LABELS.PATERNAL_LAST_NAME' | translate }}">
+                            <mat-error
+                                *ngIf="form.controls.paternalLastName.errors?.required && form.controls.paternalLastName.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.MOTHER_LAST_NAME' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.MOTHER_LAST_NAME' | translate }}"
+                                formControlName="motherLastName">
+                            <mat-error
+                                *ngIf="form.controls.motherLastName.errors?.required && form.controls.motherLastName.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.NAMES' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.NAMES' | translate }}"
+                                formControlName="names">
+                            <mat-error *ngIf="form.controls.names.errors?.required && form.controls.names.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.DATE_BIRTH' | translate }}</mat-label>
+                            <mat-select formControlName="dateBirth">
+                                <mat-option *ngFor="let year of years" [value]="year">
+                                    {{year}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field appearance="fill" class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.GENDER' | translate }}</mat-label>
+                            <mat-select matInput formControlName="gender">
+                                <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                                    {{gender.viewValue}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.EMAIL' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.EMAIL' | translate }}"
+                                maxlength="50" formControlName="email"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf="form.controls.email.errors?.required && form.controls.email.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.PHONE' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.PHONE' | translate }}"
+                                type="number" maxlength="9" formControlName="phone"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error *ngIf="form.controls.phone.errors?.required && form.controls.phone.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                        <mat-form-field class="general-input">
+                            <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.DIRECTION' | translate }}</mat-label>
+                            <input matInput placeholder="{{ 'DRIVERS_OPERATORS.LABELS.DIRECTION' | translate }}"
+                                maxlength="50" formControlName="direction"
+                                oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                            <mat-error
+                                *ngIf="form.controls.direction.errors?.required && form.controls.direction.touched">
+                                {{ 'VEHICLES.ERRORS.REQUIRED' | translate }}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row seccion-container">
+                <form [formGroup]="licensesForm" (ngSubmit)="saveLicenses()">
+                    <div class="row">
+                        <hr class="ks-line" />
+                        <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                            <div class="tsp-secction-title">
+                                {{ 'DRIVERS_OPERATORS.LABELS.DRIVERS_LICENSES' | translate }}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row space-container">
+                        <div>
+                            {{ 'DRIVERS_OPERATORS.LABELS.REGISTER_LICENSE' | translate }}:
+                        </div>
+                        <div class="filter-container col-sm-10 col-10 col-md-10 col-lg-10 col-xl-10">
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input">
+                                        <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate
+                                            }}</mat-label>
+                                        <input matInput
+                                            placeholder="{{ 'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate }}"
+                                            maxlength="50" formControlName="licenseNumber"
+                                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field appearance="fill" class="general-input">
+                                        <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.CLASS' | translate }}</mat-label>
+                                        <mat-select matInput formControlName="class">
+                                            <mat-option *ngFor="let class of typeClass" [value]="class.value">
+                                                {{class.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field appearance="fill" class="general-input">
+                                        <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate }}</mat-label>
+                                        <mat-select matInput formControlName="category">
+                                            <mat-option *ngFor="let category of typeCategory" [value]="category.value">
+                                                {{category.viewValue}}
+                                            </mat-option>
+                                        </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.EXPEDITION_DATE' | translate }}
+                                        </mat-label>
+                                        <input matInput [matDatepicker]="expeditionDate" required
+                                            formControlName="expeditionDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="expeditionDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #expeditionDate></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" appearance="fill">
+                                        <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.EXPIRATION_DATE' | translate }}
+                                        </mat-label>
+                                        <input matInput [matDatepicker]="expirationDate" required
+                                            formControlName="expirationDate" />
+                                        <mat-datepicker-toggle matSuffix [for]="expirationDate">
+                                        </mat-datepicker-toggle>
+                                        <mat-datepicker #expirationDate></mat-datepicker>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                    <mat-form-field class="general-input" style="width: 80%;">
+                                        <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate }}
+                                        </mat-label>
+                                        <input matInput id="uploadFile" disabled value={{fileLicense.name}} />
+                                    </mat-form-field>
+                                    <div class="fileUpload btn ">
+                                        <mat-icon>note_add</mat-icon>
+                                        <input id="uploadBtn" type="file" class="upload"
+                                            (change)="onFileSelectLicense($event)" formControlName="documentLicense" />
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-1 col-1 col-md-1 col-lg-1 col-xl-1">
+                            <button type="submit" mat-raised-button class="button-plus"><i
+                                    class="mdi mdi-plus"></i></button>
+                        </div>
+                    </div>
+                </form>
+                <div class="row space-container">
+                    <div>
+                        {{ 'DRIVERS_OPERATORS.LABELS.VARIOUS' | translate }}:
+                    </div>
+
+                    <p-table [columns]="cols" [value]="licenses" class="tsp-table-container" selectionMode="single"
+                        [(selection)]="selectedItem" dataKey="id" styleClass="p-datatable-customers">
+                        <ng-template pTemplate="header" let-columns>
+                            <tr>
+                                <th class="column-options table-font-header">
+                                    Nº
+                                </th>
+                                <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                                    class="column-options table-font-header">
+                                    {{column.header}}</th>
+                                <th class="column-options table-font-header">
+                                    Licencia
+                                </th>
+                                <th class="column-options table-font-header">
+                                    Opción
+                                </th>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-customer let-rowData let-columns="columns"
+                            let-rowIndex="rowIndex">
+                            <tr [pSelectableRow]="customer">
+                                <td>
+                                    {{rowIndex + 1}}
+                                </td>
+                                <td *ngFor="let col of columns">
+                                    {{rowData[col.field]}}
+                                </td>
+                                <td>
+                                    <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                                        <mat-icon class="iconFile">picture_as_pdf</mat-icon>
+                                    </div>
+                                </td>
+                                <td class="buttons-container row">
+                                    <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                                        <button color="warn" class="button-actions-delete"
+                                            (click)="deleteLicense(rowIndex)">
+                                            <mat-icon class="tsp-icons">delete</mat-icon>
+                                        </button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="emptymessage">
+                            <tr>
+                                <td colspan="4"> {{ 'DRIVERS_OPERATORS.LABELS.NO_LICENSES' | translate }}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                    <mat-form-field class="general-input" style="width: 80%;">
+                        <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate }}
+                        </mat-label>
+                        <input matInput id="uploadFile" value={{fileRecord.name}} />
+                    </mat-form-field>
+                    <div class="fileUpload btn ">
+                        <mat-icon>note_add</mat-icon>
+                        <input id="uploadBtn" type="file" class="upload" (change)="onFileSelectRecord($event)" />
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="row">
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+                <button type="submit" [disabled]="form.invalid" mat-flat-button mat-button color="primary">
+                    <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+                </button>
+            </div>
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+                <button mat-flat-button mat-button mat-dialog-close color="warn">
+                    <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,48 @@
+@import url('../../../../assets/scss/global-styles.scss');
+@import 'variables';
+
+.tsp-view-title {
+    text-align: center;
+    color: $tspSigesWhiteLetters;
+}
+
+.tsp-view-title-container {
+    background-color: $tspSigesBlue;
+    padding: 10px;
+}
+
+.button-actions {
+    margin-top: 5px;
+    background-color: $tspSigesBlue;
+    border: none;
+    border-radius: 4px;
+}
+
+.tsp-icons {
+    color: $tspSigesWhite;
+    margin-top: 0.4vh;
+}
+
+.title-filter {
+    color: $tspSigesBlue;
+    font-weight: 600;
+    margin-top: 3px;
+}
+
+.filter-container {
+    padding-top: 1px;
+    padding-bottom: 1px;
+    padding-left: 2%;
+}
+
+.dateSelectContainer {
+    padding-left: 5%;
+}
+
+.button-search-container {
+    text-align: left;
+}
+
+.button-register-container {
+    text-align: center;
+}

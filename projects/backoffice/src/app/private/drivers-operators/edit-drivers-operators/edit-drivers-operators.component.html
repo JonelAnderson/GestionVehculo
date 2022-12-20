@@ -1,0 +1,283 @@
+<div class="container">
+    <div class="tsp-title-header-modal row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <h1 class="tsp-title tsp-view-title tsp-title-modals"> {{ 'DRIVERS_OPERATORS.EDIT.TITLE' | translate }} |
+                70187549
+            </h1>
+        </div>
+    </div>
+    <div mat-dialog-content>
+        <div class="row seccion-container">
+            <div class="row">
+                <hr class="ks-line" />
+                <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                    <div class="tsp-secction-title">
+                        {{ 'DRIVERS_OPERATORS.LABELS.GENERAL_DATE' | translate }}
+                    </div>
+                </div>
+            </div>
+            <div class=" container row">
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <div class="title">
+                        <mat-label>{{'DRIVERS_OPERATORS.LABELS.PATERNAL_LAST_NAME'| translate}}</mat-label>
+                    </div>
+                    <div>
+                        <span>CARRILLO</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <div class="title">
+                        <mat-label>{{'DRIVERS_OPERATORS.LABELS.MOTHER_LAST_NAME'| translate}}</mat-label>
+                    </div>
+                    <div>
+                        <span>TOLEDO</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <div class="title">
+                        <mat-label>{{'DRIVERS_OPERATORS.LABELS.NAMES'| translate}}</mat-label>
+                    </div>
+                    <div>
+                        <span>LUIS FERNANDO INOCENTE</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class=" container row">
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <div class="title">
+                        <mat-label>{{'DRIVERS_OPERATORS.LABELS.DATE_BIRTH'| translate}}</mat-label>
+                    </div>
+                    <div>
+                        <span>28/12/1998</span>
+                    </div>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <mat-form-field appearance="fill" class="general-input">
+                        <mat-label class="title">{{'DRIVERS_OPERATORS.LABELS.GENDER'|
+                            translate}}
+                        </mat-label>
+                        <mat-select matInput>
+                            <mat-option *ngFor="let gender of genders" [value]="gender.value">
+                                {{gender.viewValue}}
+                            </mat-option>
+                        </mat-select>
+                        <!-- <mat-error *ngIf=" PIPForm.controls.licencePlate.errors?.required">
+                                {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+
+            <div class=" container row">
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <mat-form-field class="general-input">
+                        <mat-label class="title">{{'DRIVERS_OPERATORS.LABELS.EMAIL'|
+                            translate}}
+                        </mat-label>
+                        <input matInput type="text" maxlength="50" f
+                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <!-- Messages Error using Validation-->
+                        <!--                         <mat-error *ngIf=" PIPForm.controls.licencePlate.errors?.required">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <mat-form-field class="general-input">
+                        <mat-label class="title">{{'DRIVERS_OPERATORS.LABELS.PHONE'|
+                            translate}}
+                        </mat-label>
+                        <input matInput type="text" maxlength="50" f
+                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <!-- Messages Error using Validation-->
+                        <!--                         <mat-error *ngIf=" PIPForm.controls.licencePlate.errors?.required">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error> -->
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4 contentAtribute">
+                    <mat-form-field class="general-input">
+                        <mat-label class="title">{{'DRIVERS_OPERATORS.LABELS.DIRECTION'|
+                            translate}}
+                        </mat-label>
+                        <input matInput type="text" maxlength="50" f
+                            oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                        <!-- Messages Error using Validation-->
+                        <!--                         <mat-error *ngIf=" PIPForm.controls.licencePlate.errors?.required">
+                            {{ 'GENERAL.ERRORS.REQUIRED' | translate }}</mat-error> -->
+                    </mat-form-field>
+                </div>
+            </div>
+        </div>
+
+        <div class="row seccion-container">
+            <form [formGroup]="licensesForm" (ngSubmit)="saveLicenses()">
+                <div class="row">
+                    <hr class="ks-line" />
+                    <div class="col-sm-12 col-12 col-md-12 col-lg-12 col-xl-12">
+                        <div class="tsp-secction-title">
+                            {{ 'DRIVERS_OPERATORS.LABELS.DRIVERS_LICENSES' | translate }}
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row space-container">
+                    <div>
+                        {{ 'DRIVERS_OPERATORS.LABELS.REGISTER_LICENSE' | translate }}:
+                    </div>
+                    <div class="filter-container col-sm-10 col-10 col-md-10 col-lg-10 col-xl-10">
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field class="general-input">
+                                    <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate
+                                        }}</mat-label>
+                                    <input matInput
+                                        placeholder="{{ 'DRIVERS_OPERATORS.LABELS.LICENSE_NUMBER' | translate }}"
+                                        maxlength="50" formControlName="licenseNumber"
+                                        oninput="if(this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.CLASS' | translate }}</mat-label>
+                                    <mat-select matInput formControlName="class">
+                                        <mat-option *ngFor="let class of typeClass" [value]="class.value">
+                                            {{class.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field appearance="fill" class="general-input">
+                                    <mat-label>{{ 'DRIVERS_OPERATORS.LABELS.CATEGORY' | translate }}</mat-label>
+                                    <mat-select matInput formControlName="category">
+                                        <mat-option *ngFor="let category of typeCategory" [value]="category.value">
+                                            {{category.viewValue}}
+                                        </mat-option>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field class="general-input" appearance="fill">
+                                    <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.EXPEDITION_DATE' | translate }}
+                                    </mat-label>
+                                    <input matInput [matDatepicker]="expeditionDate" required
+                                        formControlName="expeditionDate" />
+                                    <mat-datepicker-toggle matSuffix [for]="expeditionDate">
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #expeditionDate></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field class="general-input" appearance="fill">
+                                    <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.EXPIRATION_DATE' | translate }}
+                                    </mat-label>
+                                    <input matInput [matDatepicker]="expirationDate" required
+                                        formControlName="expirationDate" />
+                                    <mat-datepicker-toggle matSuffix [for]="expirationDate">
+                                    </mat-datepicker-toggle>
+                                    <mat-datepicker #expirationDate></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                            <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+                                <mat-form-field class="general-input" style="width: 80%;">
+                                    <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate }}
+                                    </mat-label>
+                                    <input matInput id="uploadFile" value={{fileLicense.name}} />
+                                </mat-form-field>
+                                <div class="fileUpload btn ">
+                                    <mat-icon>note_add</mat-icon>
+                                    <input id="uploadBtn" type="file" class="upload"
+                                        (change)="onFileSelectLicense($event)" formControlName="documentLicense" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-1 col-1 col-md-1 col-lg-1 col-xl-1">
+                        <button type="submit" mat-raised-button class="button-plus"><i
+                                class="mdi mdi-plus"></i></button>
+                    </div>
+                </div>
+            </form>
+            <div class="row space-container">
+                <div>
+                    {{ 'DRIVERS_OPERATORS.LABELS.VARIOUS' | translate }}:
+                </div>
+                <p-table [columns]="cols" [value]="licenses" class="tsp-table-container" selectionMode="single"
+                    [(selection)]="selectedItem" dataKey="id" styleClass="p-datatable-customers">
+                    <ng-template pTemplate="header" let-columns>
+                        <tr>
+                            <th class="column-options table-font-header">
+                                Nº
+                            </th>
+                            <th *ngFor="let column of columns" pSortableColumn="{{column.field}}"
+                                class="column-options table-font-header">
+                                {{column.header}}</th>
+                            <th class="column-options table-font-header">
+                                Licencia
+                            </th>
+                            <th class="column-options table-font-header">
+                                Opción
+                            </th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-customer let-rowData let-columns="columns"
+                        let-rowIndex="rowIndex">
+                        <tr [pSelectableRow]="customer">
+                            <td>
+                                {{rowIndex + 1}}
+                            </td>
+                            <td *ngFor="let col of columns">
+                                {{rowData[col.field]}}
+                            </td>
+                            <td>
+                                <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                                    <mat-icon class="iconFile">picture_as_pdf</mat-icon>
+                                </div>
+                            </td>
+                            <td class="buttons-container row">
+                                <div mat-raised-button class="col-12 col-md-6 col-lg-4 container-buttons">
+                                    <button class="editLicense(rowIndex) button-actions">
+                                        <mat-icon class="tsp-icons">edit</mat-icon>
+                                    </button>
+                                    <button color="warn" class="button-actions-delete"
+                                        (click)="deleteLicense(rowIndex)">
+                                        <mat-icon class="tsp-icons">delete</mat-icon>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="emptymessage">
+                        <tr>
+                            <td colspan="4"> {{ 'DRIVERS_OPERATORS.LABELS.NO_LICENSES' | translate }}</td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </div>
+        </div>
+        <div class="col-sm-12 col-12 col-md-4 col-lg-4 col-xl-4">
+            <mat-form-field class="general-input" style="width: 80%;">
+                <mat-label> {{ 'DRIVERS_OPERATORS.LABELS.DOCUMENT_LICENSE' | translate }}
+                </mat-label>
+                <input matInput id="uploadFile" value={{fileRecord.name}} />
+            </mat-form-field>
+            <div class="fileUpload btn ">
+                <mat-icon>note_add</mat-icon>
+                <input id="uploadBtn" type="file" class="upload" (change)="onFileSelectRecord($event)" />
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 SaveEdit">
+            <button mat-flat-button mat-button mat-dialog-close color="primary">
+                <mat-icon>save</mat-icon>{{'GENERAL.BUTTONS.SAVE'| translate}}
+            </button>
+        </div>
+        <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6 CloseModal">
+            <button mat-flat-button mat-button mat-dialog-close color="warn">
+                <mat-icon>close</mat-icon>{{'GENERAL.BUTTONS.CLOSE' | translate}}
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,754 @@
+{
+  "GENERAL": {
+    "BUTTONS": {
+      "NEW": "Nuevo",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar",
+      "OK": "Aceptar",
+      "CANCEL": "Cancelar",
+      "DELETE": "Eliminar",
+      "EDIT": "Editar",
+      "REMOVE": "Remover",
+      "CHANGE": "Cambiar",
+      "REQUIRED_MARK": "*"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido.",
+      "DATA_INVALID": "El valor ingresado es no valido"
+    },
+    "LABELS": {
+      "FROM": "Desde",
+      "UNTIL": "Hasta"
+    }
+  },
+  "VEHICLES": {
+    "BUTTONS": {
+      "NEW": "Nuevo",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar",
+      "CONFIRM": "Confirmar",
+      "CANCEL": "Cancelar"
+    },
+    "LABELS": {
+      "GENERAL_DATE": "Datos Generales",
+      "FEATURES": "Caracteristicas",
+      "LICENSE_PLATE": "Placa",
+      "BRAND": "Marca",
+      "VEHICLE_TYPE": "Tipo de Vehículo",
+      "ASSIGNED_AREA": "Área Asignada",
+      "MODEL": "Modelo",
+      "YEAR": "Año",
+      "COLOR": "Color",
+      "FUEL_TYPE": "Tipo de Combustible",
+      "ENGINE_NUMBER": "Número de Motor",
+      "ENGINE_TYPE": "Tipo de Motor",
+      "SERIAL_NUMBER": "Numero de Serie",
+      "ALERT": "Alertas"
+    },
+    "TITLES": {
+      "REGISTER": "Registro de Vehículo",
+      "EDIT": "Editar Vehiculo",
+      "UNSUSCRIBE": "Dar de Baja Registro de Vehículo"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido",
+      "MAYUSCULE_LONG": "Solo se permiten letras mayusculas entre 14 y 17 caracteres",
+      "MAYUSCULE": "Solo se permiten letras mayusculas",
+      "MIN_SIX_CARACTERS": "Minimo seis digitos"
+    },
+    "SHOW": {
+      "LABELS": {
+        "ASSIGNED_AREA": "Área Asignada",
+        "ALL": "Todas",
+        "BRAND": "Marca",
+        "VEHICLE_TYPE": "Tipo de Vehículo",
+        "VEHICLE_STATE": "Estado del Vehículo",
+        "SOAT_STATE": "Estado del SOAT",
+        "TECHNICAL_REVIEW_STATE": "Estado de Revisíon Tecnica",
+        "REGISTER_STATE": "Estado de Registro",
+        "PIP": "Soat",
+        "TECHNICAL_REVIEW": "Revisión Técnica",
+        "MAINTENANCE": "Mantenimiento",
+        "VEHICLE": "Vehículo"
+      },
+      "TABLE_HEADERS": {
+        "AREA": "Area",
+        "BRAND": "Marca",
+        "MODEL": "Modelo",
+        "PIP_POLICY": "Soat",
+        "REGISTER_STATE": "Estado-Vehiculo",
+        "STATE": "Estado-Registro",
+        "TYPE": "Tipo",
+        "YEAR": "Año"
+      }
+    },
+    "UNSUSCRIBE": {
+      "LABELS": {
+        "OBSERVATION": "Observación"
+      }
+    },
+    "MESSAGES": {
+      "ADD": {
+        "SUCCESS": "Se regitro el Vehiculo Correctamente",
+        "SUCCESS_TITLE": "Registro Exitoso!",
+        "FAILED": "Ocurrio un error al registrar el Vehiculo",
+        "FAILED_TITLE": "Registro de Vehiculo Fallido!"
+      },
+      "UPDATE": {
+        "SUCCESS": "Se actualizo el Vehiculo Correctamente",
+        "SUCCESS_TITLE": "Actualización Exitosa!",
+        "FAILED": "Ocurrio un error al actualizar el Vehiculo",
+        "FAILED_TITLE": "Actualización de Vehiculo Fallido!"
+      }
+    }
+  },
+  "PIP": {
+    "TITLE": "SOAT",
+    "TITLES": {
+      "REGISTER": "Registro de SOAT"
+    },
+    "CONTROL_PANEL": "Home / SOAT",
+    "CONTROL_PANEL_NEW": "Home / SOAT / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / SOAT / Editar",
+    "NEW": "Nuevo SOAT",
+    "EDIT": {
+      "TITLE": "Edit SOAT",
+      "QUIT": {
+        "TITLE": "Quit editing?"
+      }
+    },
+    "CREATE": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "INSURANCE_COMPANY": "DATOS DE LA EMPRESA ASEGURADORA",
+      "POLICY_DATA": "DATOS DE LA POLIZA",
+      "CONTRACTOR_INSURED": "DATOS DE LA POLIZA",
+      "PRINTABLE_DOCUMENT": "DOCUMENTO ADJUNTO"
+    },
+    "SECTIONS_TITLES": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "INSURANCE_COMPANY": "DATOS DE LA EMPRESA ASEGURADORA",
+      "POLICY_DATA": "DATOS DE LA POLIZA",
+      "INSURED": "CONTRATANTE/ASEGURADO",
+      "PRINTABLE_DOCUMENT": "DOCUMENTO ADJUNTO"
+    },
+    "DATA": {
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Area",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "BRAND": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "SERIE": "Vin/N de serie",
+      "INSURANCE": "Aseguradora",
+      "POLICY_N": "Nº de poliza - certificado",
+      "POLICY_VALIDITY": "Vigencia de la poliza",
+      "VALIDITY_PIP_CERTIFICATE": "Vigencia del certificado SOAT control policial",
+      "IDENTIFICATION_DOCUMENT": "RUC/DNI",
+      "BUSINESS_NAME": "Razón Social",
+      "DATE_OF_ISSUE": "Fecha",
+      "BROADCAST_TIME": "Hora de emisión",
+      "PREMIUM_AMOUNT": "Importe de la prima",
+      "START_DATE": "Fecha inicio",
+      "END_DATE": "Fecha fin",
+      "ADD_DOCUMENT": "Agregar documento",
+      "ERRORS": {
+        "LICENSE_PLATE_REQUIRED": "La placa es requerido.",
+        "POLICY_N_REQUIRED": "El Nº de poliza es requerido.",
+        "START_DATE_REQUIRED": "Fecha de inicio requerido.",
+        "END_DATE_REQUIRED": "Fecha de fin requerido.",
+        "START_DATE_INVALID": "Fecha de inicio invalido.",
+        "END_DATE_INVALID": "Fecha de fin invalido.",
+        "PREMIUM_AMOUNT_REQUIRED": "Importe de la prima es requerido.",
+        "IDENTIFICATION_DOCUMENT_REQUIRED": "Documento de indentificación es requerido.",
+        "DATE_OF_ISSUE_REQUIRED": "Fecha es requerido",
+        "BROADCAST_TIME_REQUIRED": "Hora es requerido"
+      }
+    },
+    "REQUIRED_MARK": "*",
+    "REQUIRED_DATA": "(*) Datos Obligatorios",
+    "LIST": {
+      "ID": "N°",
+      "DAYS_UNTIL_EXPIRATION": "DIAS PARA VENCER",
+      "AREAS": "AREAS",
+      "INSURANCE_COMPANY": "EMPRESA ASEGURADORA",
+      "POLICY_NUMBER": "NUMERO DE POLIZA",
+      "LICENSE_PLATE": "PLACA",
+      "TYPE": "TIPO",
+      "STATE": "ESTADO",
+      "OPTIONS": "OPCIONES",
+      "DATES": "Fecha:",
+      "INITIAL_DATE": "Fecha Inicial",
+      "FINAL_DATE": "Fecha Final",
+      "RECORD": "Historial"
+    },
+    "SHOW_PIP": {
+      "BTN": {
+        "UNSUSCRIBE": "Dar de Baja"
+      }
+    },
+    "EDIT_PIP": {
+      "SECTION_VEHICLE": {
+        "PLACEHOLDER": {
+          "LICENSE_PLATE": "Ingrese el N° de Placa"
+        }
+      },
+      "SECTION_ENTERPRISE": {
+        "PLACEHOLDERS": {
+          "INSURANCE_CARRIER": "INGRESE ASEGURADORA"
+        }
+      },
+      "SECTION_POLIZA": {
+        "PLACEHOLDERS": {
+          "N_POLIZA_CERTIFIED": "Numero de poliza",
+          "START_DATE": "Ingrese fecha inicio",
+          "END_DATE": "Ingrese fecha fin"
+        }
+      },
+      "SECTION_INSURED": {
+        "PLACEHOLDERS": {
+          "DATE": "Ingrese una Fecha",
+          "TOTAL_PRIMA": "Ingrese el importe total de la prima"
+        }
+      },
+      "ERRORS": {
+        "LIMIT_END_DATE": "Fecha invalida",
+        "ONLYNUMBER": "Solo se permiten valores numericos"
+      }
+    },
+    "UNSUSCRIBE_PIP": {
+      "TITLE": "DAR DE BAJA DOCUMENTO",
+      "LABELS": {
+        "QUESTION": "¿Estas seguro que quieres dar de baja el SOAT?",
+        "OBSERVATIONS": "Observaciones"
+      },
+      "PLACEHOLDERS": {
+        "OBSERVATIONS": "Ingrese el motivo por el cual desea realizar esta acción"
+      }
+    }
+  },
+  "VEHICLE_INSPECTIONS": {
+    "TITLE": "Revisión Técnica",
+    "TITLES": {
+      "REGISTER": "Registro de Revisión Técnica",
+      "SHOW_HISTORY": "HISTORIAL",
+      "NEW": "NUEVO",
+      "EDIT": "REV TEC"
+    },
+    "CONTROL_PANEL": "Home / Revisión Técnica",
+    "CONTROL_PANEL_NEW": "Home / Revisión Técnica / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Revisión Técnica / Editar",
+    "NEW": "Nueva Revisión Técnica",
+    "SHOW": "Ver Revisión Técnica",
+    "EDIT": {
+      "TITLE": "Editar Revisión Técnica",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "LABELS": {
+      "N_": "N°",
+      "ENTERPRISE": "Empresa",
+      "REVIEW_DATE": "Fecha de revisión",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO"
+    },
+    "PLACEHOLDERS": {
+      "N_": "Ingrese el número del certificado",
+      "ENTERPRISE": "Ingrese el nombre de la empresa",
+      "REVIEW_DATE": "Ingrese la fecha de revisión",
+      "EXPIRATION_DATE": "Ingrese la fecha de vencimiento"
+    },
+    "DATA": {
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO ASEGURADO",
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Area",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "BRAND": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "SERIE": "Vin/N de serie",
+      "CERTIFICATE_DETAILS": "DATOS DEL CERTIFICADO",
+      "CERTIFICATE_NUMBER": "Nº",
+      "ENTERPRISE": "Empresa",
+      "ENTERPRISES": "Empresas",
+      "REVIEW_DATE": "Fecha de revisión",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "ATTACHED_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "ADD_DOCUMENT": "Agregar documento",
+      "DAYS_EXPIRE": "Días por vencer ",
+      "STATUS": "Estado"
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA DOCUMENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja la Revisión Técnica?"
+    },
+    "SHOW_HISTORY": {
+      "TITLE": "HISTORIAL DE LAS REVISIONES TÉCNICAS",
+      "N_CERTIFIED": "N° CERTIFICADO",
+      "SUPPLIER": "PROVEEDOR",
+      "REVIEW_DATE": "FECHA DE REVISIÓN",
+      "EXPIRATION_DATE": "FECHA DE VENCIMIENTO",
+      "STATE": "ESTADO"
+    }
+  },
+  "FUEL_SUPPLIES": {
+    "TITLE": "Abastecimiento",
+    "TITLES": {
+      "REGISTER": "Registro de Abastecimiento",
+      "SHOW": "ABASTECIMIENTO",
+      "DETAIL_FUEL_CONSUMPTION": "Control de Consumo de Combustible",
+      "SHOW_DETAIL": "DETALLE CONSUMO",
+      "PRICE_RECORD": "Registro de Precio",
+      "RECORT_FUEL": "REPORTES DE COMBUSTIBLE",
+      "FUEL_PRICES": "Precios de Combustible",
+      "PRICE": "Precio",
+      "EDIT": "(Editar)"
+    },
+    "SUPPLY": {
+      "TITLE": "ABASTECIMIENTO | AIU-056",
+      "VEHICLE_DATA": "DATOS DE VEHÍCULO",
+      "DISPATCH_DATA": "DATOS DE DESPACHO",
+      "CATERING": "ABASTECIMIENTO",
+      "BUTTONS_SAVE": "Guardar",
+      "BUTTONS_CLOSE": "Cerrar",
+      "SUPPLYS": {
+        "LICENSE_PLATE": "Placa",
+        "AREA": "Área",
+        "DISPATCH_NOTE": "Nota de despacho",
+        "DISPATCH_DATE": "Fecha de despacho",
+        "SELLER": "Vendedor",
+        "DRIVER": "Conductor",
+        "DISPATCH_TIME": "Hora de despacho",
+        "ODOMETER": "Odómetreo",
+        "CONTRACT": "Contrato",
+        "CONCEPT": "Concepto"
+      }
+    },
+    "CONTROL_PANEL": "Home / Abastecimiento",
+    "CONTROL_PANEL_NEW": "Home / Abastecimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Abastecimiento / Editar",
+    "NEW": "Nuev Abastecimiento",
+    "SHOW": "Ver Abastecimiento",
+    "EDIT": {
+      "TITLE": "Editar Abastecimiento",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA REGISTRO DE ABASTECIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el abastecimiento?",
+      "BTN": "Dar de Baja"
+    },
+    "DATA": {
+      "DATE": "Fecha",
+      "DATE_FROM": "Desde",
+      "DATE_UNTIL": "Hasta",
+      "AREAS": "Áreas",
+      "CONTRACT": "Contrato",
+      "FUEL": "Combustible",
+      "VALIDATION_DATA": "DATOS DE VALIDACIÓN",
+      "VEHICLE_DATA": "DATOS DE VEHÍCLO",
+      "RESPONSIBLE": "Responsable",
+      "LICENSE_PLATE": "Placa",
+      "TYPE": "TIPO",
+      "TYPE_VEHICLE": "TIPO DE VEHÍCULO",
+      "TYPE_SUPPLY": "TIPO DE COMBUSTIBLE",
+      "BRAND": "MARCA",
+      "MODEL": "MODELO",
+      "COLOR": "COLOR",
+      "AREA": "AREA",
+      "N_ENGINE": "Nº DE MOTOR",
+      "SERIE": "Nº DE SERIE",
+      "YEAR": "AÑO",
+      "DISPATCH_DATA": "DATOS DE DESPACHO",
+      "DISPATCH_NOTE": "NOTA DE DESPACHO",
+      "DISPATCH_DATE": "FECHA DE DESPACHO",
+      "DISPATCH_TIME": "HORA DE DESPACHO",
+      "SELLER": "VENDEDOR",
+      "ODOMETER": "ODÓMETRO",
+      "DRIVER": "CONDUCTOR",
+      "SUPPLIYING": "ABASTECIMIENTO",
+      "ITEM": "ITEM",
+      "CONCEPT": "CONCEPTO",
+      "QUANTITY": "CANTIDAD",
+      "PU": "P.U.",
+      "AMOUNT": "IMPORTE",
+      "TOTAL": "TOTAL",
+      "OPTIONS": "OPCIONES",
+      "CONTROL_PROGRESS": "PROGRESO DEL CONTRATO",
+      "INTERVAL": "INTERVALO",
+      "DETAIL_CONSUPTION": "DETALLE DE CONSUMO",
+      "DATE_SUPPLIYING": "Fecha de abastecimiento",
+      "USER_AREA": "Área Usuaria",
+      "KM_INITIAL": "KM Inicial",
+      "KM_FINAL": "KM Final",
+      "TRAIL": "Recorrido",
+      "CONSUMPTION_GALLON": "Galones Consumidos",
+      "ESTABLISHED_RANGE": "Rango Fijo Establecido",
+      "PERCEIVED_RANGE": "Rango Percibido",
+      "PERCEIVED_RANGE_INTERVAL": "RANGO PERCIBIDO EN EL INTERVALO",
+      "VALORIZATION": "VALORIZACIONES",
+      "CONTROL_FIRM": "CONTROL PARA FIRMA",
+      "CRITERY_FILTER": "CRITERIOS Y FILTROS",
+      "TYPE_VALORIZATION": "VALORIZACIÓN TIPO ",
+      "DATE_TIME_INITIAL": "Fecha y Hora Desde",
+      "DATE_TIME_END": "Fecha y Hora Hasta"
+    },
+    "FUEL_PRICE": {
+      "GENERAL_DATA": "DATOS GENERALES",
+      "CONTRACT": "Contrato",
+      "CONTRACTOR": "Contratista",
+      "CONCEPT": "Concepto",
+      "EFECTIVE_DATE": "Fecha de Vigencia",
+      "WORTH": "valor",
+      "DOCUMENT": "Documento(Carta Ajuste Precio)",
+      "PRICE_VARIANT": "Variante de precios",
+      "PRICE_STATEMENT": "Estado de Precio"
+    }
+  },
+  "FUEL_SUPPLY_CONTRACT": {
+    "TITLE": "Contratos de abastecimiento",
+    "TITLES": {
+      "REGISTER": "Registro de Contratos de abastecimiento"
+    },
+    "CONTROL_PANEL": "Home / Contratos de abastecimiento",
+    "CONTROL_PANEL_NEW": "Home / Contratos de abastecimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Contratos de abastecimiento / Editar",
+    "NEW": "Nuevo",
+    "SHOW": {
+      "TITLE": "CONTRATO"
+    },
+    "EDIT": {
+      "TITLE": "Editar Contrato de abastecimiento",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA CONTRATO DE ABASTECIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el contrato de abastecimiento?"
+    },
+    "LABELS": {
+      "CONTRACTOR": "Contratista",
+      "CONCEPT": "Concepto",
+      "CONTRACT_STATUS": "Estado del contrato",
+      "REGISTER_STATUS": "Estado del registro",
+      "CONTRACT_EXPIRATION": "Vencimiento de contrato",
+      "FROM": "Desde",
+      "UNTIL": "Hasta"
+    },
+    "DATA": {
+      "GENERAL_DATE": "DATOS GENERALES",
+      "NUMBER_CONTRACT": "NUMERO DE CONTRATO",
+      "AMOUNT_TOTAL": "MONTO TOTAL",
+      "START_DATE": "FECHA DE INICIO",
+      "END_DATE": "FECHA FIN",
+      "CONCEPT": "CONCEPTO",
+      "CONTRACTOR_DETAILS": "DATOS DEL CONTRATISTA",
+      "BUSINESS_NAME": "RAZÓN SOCIAL",
+      "RUC": "RUC",
+      "ADDRESS": "DIRECCIÓN",
+      "MAIL": "CORREO",
+      "PHONE": "TELEFONO",
+      "CONTRACT_PROGRESS": "PROGRESO DE CONTRATO",
+      "AREA": "AREA",
+      "CONTRACTED_QUANTITY": "CANTIDAD CONTRATADA",
+      "CONSUMED_QUANTITY": "CANTIDAD CONSUMIDA",
+      "QUANTITY_AVAILABLE": "CANTIDAD DISPONIBLE",
+      "STATUS": {
+        "VALID": "VIGENTE",
+        "TIMED_OUT": "CADUCADO"
+      }
+    }
+  },
+  "DRIVERS_OPERATORS": {
+    "TITLE": "Conductores",
+    "TITLES": {
+      "REGISTER": "Registro de Conductores"
+    },
+    "CONTROL_PANEL": "Home / Conductores",
+    "CONTROL_PANEL_NEW": "Home / Conductores / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Conductores / Editar",
+    "NEW": "Nuevo Conductor",
+    "SHOW": "Ver Conductor",
+    "EDIT": {
+      "TITLE": "Conductor",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA EL CONDUCTOR",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el conductor?"
+    },
+    "LABELS": {
+      "GENERAL_DATE": "Datos Generales",
+      "NUMBER_DNI": "Número de DNI",
+      "DNI": "DNI",
+      "PATERNAL_LAST_NAME": "Apellido paterno",
+      "MOTHER_LAST_NAME": "Apellido materno",
+      "NAMES": "Nombres",
+      "DATE_BIRTH": "Fecha de nacimiento",
+      "GENDER": "Genero",
+      "EMAIL": "Correo",
+      "PHONE": "Telefono",
+      "DIRECTION": "Dirección",
+      "DRIVERS_LICENSES": "Licencias Pertenecientes al Conductor",
+      "LICENSE_NUMBER": "Número de Licencia",
+      "CLASS": "Clase",
+      "CATEGORY": "Categoría",
+      "EXPEDITION_DATE": "Fecha de expedición",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "REGISTER_LICENSE": "Registrar Licencia",
+      "VARIOUS": "Varios",
+      "NO_LICENSES": "No hay licencias.",
+      "DOCUMENT_LICENSE": "Documento(Licencia)",
+      "DOCUMENT_RECORD": "Documento(Record)"
+    }
+  },
+  "CONTRACT": {
+    "CONTRACT_REGISTRATION": "REGISTRO DE CONTRATO",
+    "CONTRACT_DATA": "DATOS DE CONTRATO",
+    "GENERAL_DATA": "DATOS GENERALES",
+    "BEGINNING": " Fecha Inicio",
+    "EXPIRATION": "Fecha Vencimiento",
+    "CONCEPT": "Concepto",
+    "ITEM": "Item",
+    "AREA": "Área",
+    "QUANTITY": "Cantidad",
+    "PU": "P.U",
+    "AMOUNT": "Importe",
+    "OPTIONS": "Opción",
+    "CONTRACTOR_DATA": "DATOS DE CONTRATISTA",
+    "RUC": "RUC",
+    "BUSINESS_NAME": "Razón Social",
+    "DIRECTION": "Dirección",
+    "MAIL": "Correo",
+    "PHONE": "Teléfono",
+    "SAVE": "Guardar",
+    "TOCLOSE": "Cerrar",
+    "CONTRACT_NUMBER": "Número de contrato",
+    "ERRORS": {
+      "CONTRACT_NUMBER_REQUIRED": "Número de contrado es requirido",
+      "SELECCIONAR_ITEM": "Seleccionar el concepto es requerido",
+      "REQUIRED": "El campo es requirido",
+      "MIN_CARACTERS": "Minimo un caracteres"
+    }
+  },
+  "CONFIRMATION": {
+    "EDITION_CONFIRMATION": "CONFIRMAR EDICIÓN",
+    "MESSAGE": "Guardar todos los cambios efectuados?",
+    "CONFIRMATION": "Confirmar",
+    "TOCLOSED": "Cerrar"
+  },
+  "VISUALIZE_DRIVER": {
+    "TITLE": "CONDUCTOR | 78021701",
+    "GENERAL_DATA": "DATOS GENERALES",
+    "LICENSES": "LICENCIAS PERTINECIENTES AL CONDUCTOR",
+    "DRIVER": {
+      "TOCLOSED": "Cerrar",
+      "DRIVER": "Conductor",
+      "GENDER": "Genero",
+      "AGE": "Edad",
+      "DIRECTION": "Dirección",
+      "PHONE": "Teléfono",
+      "EMAIL": "Email",
+      "DOCUMENT": "Documento(RECORD)",
+      "STATE": "Estado",
+      "OPTIONS": "Opción",
+      "ITEM": "N°",
+      "LICENSE_NUMBER": "Número-Licencia",
+      "CLASS": "Clase/Cat",
+      "EXPEDITION": "Expedición",
+      "EXPIRATION": "Vencimiento",
+      "LICENSE": "Licencia",
+      "LICENSE_EXPIRATION": "Vencimiento de licencia",
+      "SINCE": "Desde",
+      "UNTIL": "Hasta",
+      "CLASS_CATEGORY": "Clase categoria"
+    }
+  },
+  "MASTERS": {
+    "TITLES": {
+      "MASTERS": "Maestros",
+      "CREATE": "Registro de Maestro"
+    },
+    "CREATE": {
+      "LABELS": {
+        "CODE": "Código",
+        "NAME": "Nombre",
+        "BELONG_TO": "Pertenece a",
+        "MASTER": "Maestro"
+      }
+    },
+    "BUTTONS": {
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar"
+    },
+    "ERRORS": {
+      "REQUIRED": "El campo es requerido",
+      "ONLY_UPPER_CASE": "Solo se admiten mayusculas"
+    }
+  },
+  "MOBILITY_REQUEST": {
+    "TITLE": "Solicitudes de Movilidad",
+    "TITLES": {
+      "REGISTER": "Registro de Solicitud de Movilidad"
+    },
+    "CONTROL_PANEL": "Home / Solicitud de Movilidad",
+    "CONTROL_PANEL_NEW": "Home / Solicitud de Movilidad / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Solicitud de Movilidad / Editar",
+    "NEW": "Nueva Solicitud de Movilidad",
+    "SHOW": "Ver Solicitud de Movilidad",
+    "EDIT": {
+      "TITLE": "SOL MOV",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA SOLICITUD DE MOVILIDAD",
+      "QUESTION": "¿Estas seguro que quieres dar de baja la Solicitud de Movilidad?"
+    },
+    "LABELS": {
+      "SERVICE_DATA": "Datos del servicio",
+      "INSURED_VEHICLE": "DATOS DEL VEHÍCULO",
+      "LICENSE_PLATE": "Placa",
+      "AREA": "Area",
+      "RESPONSIBLE": "Responsable",
+      "MARK": "Marca",
+      "TYPE": "Tipo",
+      "MODEL": "Modelo",
+      "COLOR": "Color",
+      "YEAR": "Año",
+      "N_ENGINE": "Nº de motor",
+      "VEHICLE_DATA": "DATOS DEL VEHÍCULO",
+      "SERIE": "Vin/Nº de serie",
+      "SERVICE_DATE": "Datos de servicio",
+      "N": "N°",
+      "USER_AREA": "Área usuaria",
+      "COMMISSIONARY_STAFF": "Personal comisionado",
+      "DATE_SERVICE": "Fecha del servicio",
+      "TIME_SERVICE": "Hora de servicio",
+      "COMMISSION_OBJETIVE": "Objetivo de la comisión",
+      "ASSIGNED_DRIVER": "Conductor asignado",
+      "DEPARTURE_TIME": "Hora de salida",
+      "KM_OUT": "KM salida",
+      "TIME_ARRIVAL": "Hora de llegada",
+      "KM_ARRIVAL": "KM llegada",
+      "DESTINATION_DATA": "DATOS DE DESTINO",
+      "ENTITY": "Entidad",
+      "DISTRIC": "Distrito",
+      "ADDRESS": "Dirección",
+      "OBSERVATION": "Observación",
+      "ATTACHED_DOCUMENT": "DOCUMENTO ADJUNTO",
+      "ADD_DOCUMENT": "Agregar documento",
+      "SERVICE_NUMBER": "Nº",
+      "HOUR_SERVICE": "Hora de servicio",
+      "COMMISSION_GOAL": "Objetivo de la comisión",
+      "ARRIVAL_TIME": "Hora de llegada",
+      "DEPARTURE_KM": "KM salida",
+      "ARRIVAL_KM": "KM llegada",
+      "DISTRICT": "Distrito",
+      "USERS_AREAS": "Areas Usuarias",
+      "VEHICLES": "Vehículos",
+      "DRIVERS": "Conductores",
+      "BRAND": "Marca"
+    },
+    "RECORD": {
+      "TITLE": "HISTORIAL DE SOAT",
+      "INSURED_VEHICLE_DATA": "DATOS DE VEHÍCULO ASEGURADO",
+      "HISTORY_OF_INSURED_VEHICLE": "HISTORIAL DE VEHICULO ASEGURADO",
+      "VEHICLE_HISTORY": {
+        "LICENSE_PLATE": "Placa",
+        "AREA": "Área",
+        "RESPONSIBLE": "Responsable",
+        "TYPE": "Tipo",
+        "BRAND": "Marca",
+        "MODEL": "Modelo",
+        "COLOR": "Color",
+        "YEAR": "Año",
+        "ENGINE": "N° de motor",
+        "SERIE": "Vin/N de serie",
+        "POLICY_NUMBER": "N° de poliza",
+        "BUSINESS": "Empresa",
+        "INITIAL_DATE": "Fecha inicial",
+        "FINAL_DATE": "Fecha final",
+        "STATE": "Estado",
+        "FUEL_TYPE": "Tipo de combustible"
+      },
+      "EDITFUEL": {
+        "TITLE": "CONTRATO | 032 2022-MINP/OGA"
+      },
+      "SERVICE_NUMBER": "Nº",
+      "HOUR_SERVICE": "Hora de servicio",
+      "COMMISSION_GOAL": "Objetivo de la comisión",
+      "ARRIVAL_TIME": "Hora de llegada",
+      "DEPARTURE_KM": "KM salida",
+      "ARRIVAL_KM": "KM llegada",
+      "DISTRICT": "Distrito",
+      "ADD_DOCUMENT": "Agregar documento",
+      "USERS_AREAS": "Areas Usuarias",
+      "VEHICLES": "Vehículos",
+      "DRIVERS": "Conductores"
+    },
+    "ERRORS": {
+      "NUMBER_YEAR": "Número-año(xxxx-xxxx)"
+    }
+  },
+  "MAINTENANCES": {
+    "TITLE": "",
+    "TITLES": {
+      "REGISTER": "",
+      "HISTORY_VEHICLE": "Historial de Mantenimiento"
+    },
+    "CONTROL_PANEL": "Home / Mantenimiento",
+    "CONTROL_PANEL_NEW": "Home / Mantenimiento / Nuevo",
+    "CONTROL_PANEL_EDIT": "Home / Mantenimiento / Editar",
+    "NEW": "Nuevo Mantenimiento",
+    "SHOW": "Ver Mantenimiento",
+    "EDIT": {
+      "TITLE": "",
+      "QUIT": {
+        "TITLE": "¿Dejar de editar?"
+      }
+    },
+    "UNSUSCRIBE": {
+      "TITLE_MODAL": "DAR DE BAJA MANTENIMIENTO",
+      "QUESTION": "¿Estas seguro que quieres dar de baja el Mantenimiento?"
+    },
+    "LABELS": {
+      "VEHICLE_HISTORY": "HISTORIAL DEL VEHÍCULO",
+      "NO_VEHICLE": "No hay Vehículo"
+    }
+  },
+  "LICENSE_REVALIDATION": {
+    "TITLE": "REGISTRO: REVA/RECA DE LICENCIA",
+    "DATA_LICENCE": "Datos de la licencia",
+    "REVALIDATION": {
+      "LICENSE_NUMBER": "Número de licencia",
+      "CLASS": "Clase",
+      "CATEGORY": "Categoría",
+      "EXPEDITION_DATE": "Fecha de expedición",
+      "EXPIRATION_DATE": "Fecha de vencimiento",
+      "LICENSE_DOCUMENT": "Documento(Licencia)",
+      "SAVE": "Guardar",
+      "CLOSE": "Cerrar"
+    }
+  },
+  "ALERTS": {
+    "TITLE": "ALERTA DE EVENTOS",
+    "LABELS": {
+      "DOCUMENT": "Documento"
+    }
+  }
+}
